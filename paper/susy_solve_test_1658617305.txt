@@ -1,0 +1,508 @@
+h_{a b}
+
+ex_str D_{\alpha}(D_{\beta}(h_{a b})) + D_{\beta}(D_{\alpha}(h_{a b}))
+
+ex D_{α}(D_{β}(h_{a b})) + D_{β}(D_{α}(h_{a b}))
+
+susy_expand 2u \indexbracket(Γ_{a})_{β γ} v \partial_{e}(h_{b d}) \indexbracket(Γ^{d e})_{α}^{γ} + u \indexbracket(Γ_{a})_{β γ} x \indexbracket(Γ_{b} Γ^{c d e f})_{α}^{γ} \partial_{c}(A_{d e f}) + u \indexbracket(Γ_{a})_{β γ} y \indexbracket(Γ^{c d e f} Γ_{b})_{α}^{γ} \partial_{c}(A_{d e f}) + 2u \indexbracket(Γ_{b})_{β γ} v \partial_{e}(h_{a d}) \indexbracket(Γ^{d e})_{α}^{γ} + u \indexbracket(Γ_{b})_{β γ} x \indexbracket(Γ_{a} Γ^{c d e f})_{α}^{γ} \partial_{c}(A_{d e f}) + u \indexbracket(Γ_{b})_{β γ} y \indexbracket(Γ^{c d e f} Γ_{a})_{α}^{γ} \partial_{c}(A_{d e f}) + 2u \indexbracket(Γ_{a})_{α γ} v \partial_{e}(h_{b d}) \indexbracket(Γ^{d e})_{β}^{γ} + u \indexbracket(Γ_{a})_{α γ} x \indexbracket(Γ_{b} Γ^{c d e f})_{β}^{γ} \partial_{c}(A_{d e f}) + u \indexbracket(Γ_{a})_{α γ} y \indexbracket(Γ^{c d e f} Γ_{b})_{β}^{γ} \partial_{c}(A_{d e f}) + 2u \indexbracket(Γ_{b})_{α γ} v \partial_{e}(h_{a d}) \indexbracket(Γ^{d e})_{β}^{γ} + u \indexbracket(Γ_{b})_{α γ} x \indexbracket(Γ_{a} Γ^{c d e f})_{β}^{γ} \partial_{c}(A_{d e f}) + u \indexbracket(Γ_{b})_{α γ} y \indexbracket(Γ^{c d e f} Γ_{a})_{β}^{γ} \partial_{c}(A_{d e f})
+Finished 'evaluate' in 5.0939 secs
+
+evaluate -8\indexbracket(Γ^{c})_{α β} \partial_{c}(h_{a b}) u v + 4\indexbracket(Γ^{c})_{α β} \partial_{b}(h_{a c}) u v + 4\indexbracket(Γ^{c})_{α β} \partial_{a}(h_{b c}) u v
+Finished 'fierz_expand_2index' in 8.8372 secs
+
+fierz_expand_2index -8\indexbracket(Γ^{c})_{α β} \partial_{c}(h_{a b}) u v + 4\indexbracket(Γ^{c})_{α β} \partial_{b}(h_{a c}) u v + 4\indexbracket(Γ^{c})_{α β} \partial_{a}(h_{b c}) u v
+desired term: -8\indexbracket(Γ^{c})_{α β} \partial_{c}(h_{a b}) u v
+gauge term: 4\indexbracket(Γ^{c})_{α β} \partial_{b}(h_{a c}) u v
+gauge term: 4\indexbracket(Γ^{c})_{α β} \partial_{a}(h_{b c}) u v
+
+factored pre_desired_terms: -8\indexbracket(Γ^{c})_{α β} \partial_{c}(h_{a b}) u v
+factored pre_gauge_terms: 4\indexbracket(Γ^{c})_{α β} \partial_{b}(h_{a c}) u v + 4\indexbracket(Γ^{c})_{α β} \partial_{a}(h_{b c}) u v
+factored pre_undesired_terms: 0
+
+Find non-gauge-invariants:
+Definition:
+ 0
+Substitution:
+ 0
+Simplification:
+ 0
+Fourier:
+ 0
+sub_ex_rhs: -( 1/2 k1_{a'} F1(h_{a b}) +  1/2 k1_{a} F1(h_{b a'}) -  1/2 k1_{b} F1(h_{a' a})) I
+Back-Substitution Rule:
+ k1_{a'} k1_{a} F1(ζ_{b}) →  -  1/2 k1_{a'} F1(h_{a b}) I -  1/2 k1_{a} F1(h_{b a'}) I +  1/2 k1_{b} F1(h_{a' a}) I
+Back-Substitution:
+ 0
+Transformations:
+ 0
+
+factored desired_terms: -8\indexbracket(Γ^{c})_{α β} \partial_{c}(h_{a b}) u v
+factored gauge terms: 4\indexbracket(Γ^{c})_{α β} \partial_{b}(h_{a c}) u v + 4\indexbracket(Γ^{c})_{α β} \partial_{a}(h_{b c}) u v
+factored undesired_terms: 0
+
+lorentz_proper_exp: 0
+
+system update: ['-8u v = (1) I']
+A_{a b c}
+
+ex_str D_{\alpha}(D_{\beta}(A_{a b c})) + D_{\beta}(D_{\alpha}(A_{a b c}))
+
+ex D_{α}(D_{β}(A_{a b c})) + D_{β}(D_{α}(A_{a b c}))
+
+susy_expand 4z \indexbracket(Γ_{a b})_{β γ} v \partial_{e}(h_{c d}) \indexbracket(Γ^{d e})_{α}^{γ} + 2z \indexbracket(Γ_{a b})_{β γ} x \indexbracket(Γ_{c} Γ^{g d e f})_{α}^{γ} \partial_{g}(A_{d e f}) + 2z \indexbracket(Γ_{a b})_{β γ} y \indexbracket(Γ^{g d e f} Γ_{c})_{α}^{γ} \partial_{g}(A_{d e f})-4z \indexbracket(Γ_{a c})_{β γ} v \partial_{e}(h_{b d}) \indexbracket(Γ^{d e})_{α}^{γ}-2z \indexbracket(Γ_{a c})_{β γ} x \indexbracket(Γ_{b} Γ^{g d e f})_{α}^{γ} \partial_{g}(A_{d e f})-2z \indexbracket(Γ_{a c})_{β γ} y \indexbracket(Γ^{g d e f} Γ_{b})_{α}^{γ} \partial_{g}(A_{d e f}) + 4z \indexbracket(Γ_{b c})_{β γ} v \partial_{e}(h_{a d}) \indexbracket(Γ^{d e})_{α}^{γ} + 2z \indexbracket(Γ_{b c})_{β γ} x \indexbracket(Γ_{a} Γ^{g d e f})_{α}^{γ} \partial_{g}(A_{d e f}) + 2z \indexbracket(Γ_{b c})_{β γ} y \indexbracket(Γ^{g d e f} Γ_{a})_{α}^{γ} \partial_{g}(A_{d e f}) + 4z \indexbracket(Γ_{a b})_{α γ} v \partial_{e}(h_{c d}) \indexbracket(Γ^{d e})_{β}^{γ} + 2z \indexbracket(Γ_{a b})_{α γ} x \indexbracket(Γ_{c} Γ^{g d e f})_{β}^{γ} \partial_{g}(A_{d e f}) + 2z \indexbracket(Γ_{a b})_{α γ} y \indexbracket(Γ^{g d e f} Γ_{c})_{β}^{γ} \partial_{g}(A_{d e f})-4z \indexbracket(Γ_{a c})_{α γ} v \partial_{e}(h_{b d}) \indexbracket(Γ^{d e})_{β}^{γ}-2z \indexbracket(Γ_{a c})_{α γ} x \indexbracket(Γ_{b} Γ^{g d e f})_{β}^{γ} \partial_{g}(A_{d e f})-2z \indexbracket(Γ_{a c})_{α γ} y \indexbracket(Γ^{g d e f} Γ_{b})_{β}^{γ} \partial_{g}(A_{d e f}) + 4z \indexbracket(Γ_{b c})_{α γ} v \partial_{e}(h_{a d}) \indexbracket(Γ^{d e})_{β}^{γ} + 2z \indexbracket(Γ_{b c})_{α γ} x \indexbracket(Γ_{a} Γ^{g d e f})_{β}^{γ} \partial_{g}(A_{d e f}) + 2z \indexbracket(Γ_{b c})_{α γ} y \indexbracket(Γ^{g d e f} Γ_{a})_{β}^{γ} \partial_{g}(A_{d e f})
+Finished 'evaluate' in 24.3335 secs
+
+evaluate 72\indexbracket(Γ^{d})_{α β} \partial_{d}(A_{a b c}) x z-72\indexbracket(Γ^{d})_{α β} \partial_{d}(A_{a b c}) y z-72\indexbracket(Γ^{d})_{α β} \partial_{c}(A_{a b d}) x z + 72\indexbracket(Γ^{d})_{α β} \partial_{c}(A_{a b d}) y z + 72\indexbracket(Γ^{d})_{α β} \partial_{b}(A_{a c d}) x z-72\indexbracket(Γ^{d})_{α β} \partial_{b}(A_{a c d}) y z-72\indexbracket(Γ^{d})_{α β} \partial_{a}(A_{b c d}) x z + 72\indexbracket(Γ^{d})_{α β} \partial_{a}(A_{b c d}) y z-8\indexbracket(Γ_{a}^{d})_{α β} \partial_{c}(h_{b d}) v z + 8\indexbracket(Γ_{a}^{d})_{α β} \partial_{b}(h_{c d}) v z + 8\indexbracket(Γ_{b}^{d})_{α β} \partial_{c}(h_{a d}) v z-8\indexbracket(Γ_{b}^{d})_{α β} \partial_{a}(h_{c d}) v z-8\indexbracket(Γ_{c}^{d})_{α β} \partial_{b}(h_{a d}) v z + 8\indexbracket(Γ_{c}^{d})_{α β} \partial_{a}(h_{b d}) v z + 12\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{d}(A_{c e f}) x z + 36\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{d}(A_{c e f}) y z-4\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{c}(A_{d e f}) x z-12\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{c}(A_{d e f}) y z-12\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{d}(A_{b e f}) x z-36\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{d}(A_{b e f}) y z + 4\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{b}(A_{d e f}) x z + 12\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{b}(A_{d e f}) y z + 12\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{d}(A_{a e f}) x z + 36\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{d}(A_{a e f}) y z-4\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{a}(A_{d e f}) x z-12\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{a}(A_{d e f}) y z
+Finished 'fierz_expand_2index' in 138.9361 secs
+
+fierz_expand_2index 72\indexbracket(Γ^{d})_{α β} \partial_{d}(A_{a b c}) x z-72\indexbracket(Γ^{d})_{α β} \partial_{d}(A_{a b c}) y z-72\indexbracket(Γ^{d})_{α β} \partial_{c}(A_{a b d}) x z + 72\indexbracket(Γ^{d})_{α β} \partial_{c}(A_{a b d}) y z + 72\indexbracket(Γ^{d})_{α β} \partial_{b}(A_{a c d}) x z-72\indexbracket(Γ^{d})_{α β} \partial_{b}(A_{a c d}) y z-72\indexbracket(Γ^{d})_{α β} \partial_{a}(A_{b c d}) x z + 72\indexbracket(Γ^{d})_{α β} \partial_{a}(A_{b c d}) y z-8\indexbracket(Γ_{a}^{d})_{α β} \partial_{c}(h_{b d}) v z + 8\indexbracket(Γ_{a}^{d})_{α β} \partial_{b}(h_{c d}) v z + 8\indexbracket(Γ_{b}^{d})_{α β} \partial_{c}(h_{a d}) v z-8\indexbracket(Γ_{b}^{d})_{α β} \partial_{a}(h_{c d}) v z-8\indexbracket(Γ_{c}^{d})_{α β} \partial_{b}(h_{a d}) v z + 8\indexbracket(Γ_{c}^{d})_{α β} \partial_{a}(h_{b d}) v z + 12\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{d}(A_{c e f}) x z + 36\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{d}(A_{c e f}) y z-4\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{c}(A_{d e f}) x z-12\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{c}(A_{d e f}) y z-12\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{d}(A_{b e f}) x z-36\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{d}(A_{b e f}) y z + 4\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{b}(A_{d e f}) x z + 12\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{b}(A_{d e f}) y z + 12\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{d}(A_{a e f}) x z + 36\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{d}(A_{a e f}) y z-4\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{a}(A_{d e f}) x z-12\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{a}(A_{d e f}) y z
+desired term: 72\indexbracket(Γ^{d})_{α β} \partial_{d}(A_{a b c}) x z
+desired term: -72\indexbracket(Γ^{d})_{α β} \partial_{d}(A_{a b c}) y z
+gauge term: -72\indexbracket(Γ^{d})_{α β} \partial_{c}(A_{a b d}) x z
+gauge term: 72\indexbracket(Γ^{d})_{α β} \partial_{c}(A_{a b d}) y z
+gauge term: 72\indexbracket(Γ^{d})_{α β} \partial_{b}(A_{a c d}) x z
+gauge term: -72\indexbracket(Γ^{d})_{α β} \partial_{b}(A_{a c d}) y z
+gauge term: -72\indexbracket(Γ^{d})_{α β} \partial_{a}(A_{b c d}) x z
+gauge term: 72\indexbracket(Γ^{d})_{α β} \partial_{a}(A_{b c d}) y z
+gauge term: -8\indexbracket(Γ_{a}^{d})_{α β} \partial_{c}(h_{b d}) v z
+gauge term: 8\indexbracket(Γ_{a}^{d})_{α β} \partial_{b}(h_{c d}) v z
+gauge term: 8\indexbracket(Γ_{b}^{d})_{α β} \partial_{c}(h_{a d}) v z
+gauge term: -8\indexbracket(Γ_{b}^{d})_{α β} \partial_{a}(h_{c d}) v z
+gauge term: -8\indexbracket(Γ_{c}^{d})_{α β} \partial_{b}(h_{a d}) v z
+gauge term: 8\indexbracket(Γ_{c}^{d})_{α β} \partial_{a}(h_{b d}) v z
+undesired term: 12\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{d}(A_{c e f}) x z
+undesired term: 36\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{d}(A_{c e f}) y z
+gauge term: -4\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{c}(A_{d e f}) x z
+gauge term: -12\indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{c}(A_{d e f}) y z
+undesired term: -12\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{d}(A_{b e f}) x z
+undesired term: -36\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{d}(A_{b e f}) y z
+gauge term: 4\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{b}(A_{d e f}) x z
+gauge term: 12\indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{b}(A_{d e f}) y z
+undesired term: 12\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{d}(A_{a e f}) x z
+undesired term: 36\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{d}(A_{a e f}) y z
+gauge term: -4\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{a}(A_{d e f}) x z
+gauge term: -12\indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{a}(A_{d e f}) y z
+
+factored pre_desired_terms: (72x z-72y z) \indexbracket(Γ^{d})_{α β} \partial_{d}(A_{a b c})
+factored pre_gauge_terms: (-72x z + 72y z) \indexbracket(Γ^{d})_{α β} \partial_{c}(A_{a b d}) + (72x z-72y z) \indexbracket(Γ^{d})_{α β} \partial_{b}(A_{a c d}) + (-72x z + 72y z) \indexbracket(Γ^{d})_{α β} \partial_{a}(A_{b c d})-8\indexbracket(Γ_{a}^{d})_{α β} \partial_{c}(h_{b d}) v z + 8\indexbracket(Γ_{a}^{d})_{α β} \partial_{b}(h_{c d}) v z + 8\indexbracket(Γ_{b}^{d})_{α β} \partial_{c}(h_{a d}) v z-8\indexbracket(Γ_{b}^{d})_{α β} \partial_{a}(h_{c d}) v z-8\indexbracket(Γ_{c}^{d})_{α β} \partial_{b}(h_{a d}) v z + 8\indexbracket(Γ_{c}^{d})_{α β} \partial_{a}(h_{b d}) v z + (-4x z-12y z) \indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{c}(A_{d e f}) + (4x z + 12y z) \indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{b}(A_{d e f}) + (-4x z-12y z) \indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{a}(A_{d e f})
+factored pre_undesired_terms: (12x z + 36y z) \indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{d}(A_{c e f}) + (-12x z-36y z) \indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{d}(A_{b e f}) + (12x z + 36y z) \indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{d}(A_{a e f})
+
+Find non-gauge-invariants:
+Definition:
+ 0
+Substitution:
+ 0
+Simplification:
+ 0
+Fourier:
+ 0
+sub_ex_rhs: 0
+Back-Substitution Rule:
+ k1_{a'} k1_{a} F1(ζ_{b c}) → 0
+Back-Substitution:
+ 0
+Transformations:
+ 0
+
+factored desired_terms: (72x z-72y z) \indexbracket(Γ^{d})_{α β} \partial_{d}(A_{a b c})
+factored gauge terms: (-72x z + 72y z) \indexbracket(Γ^{d})_{α β} \partial_{c}(A_{a b d}) + (72x z-72y z) \indexbracket(Γ^{d})_{α β} \partial_{b}(A_{a c d}) + (-72x z + 72y z) \indexbracket(Γ^{d})_{α β} \partial_{a}(A_{b c d})-8\indexbracket(Γ_{a}^{d})_{α β} \partial_{c}(h_{b d}) v z + 8\indexbracket(Γ_{a}^{d})_{α β} \partial_{b}(h_{c d}) v z + 8\indexbracket(Γ_{b}^{d})_{α β} \partial_{c}(h_{a d}) v z-8\indexbracket(Γ_{b}^{d})_{α β} \partial_{a}(h_{c d}) v z-8\indexbracket(Γ_{c}^{d})_{α β} \partial_{b}(h_{a d}) v z + 8\indexbracket(Γ_{c}^{d})_{α β} \partial_{a}(h_{b d}) v z + (-4x z-12y z) \indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{c}(A_{d e f}) + (4x z + 12y z) \indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{b}(A_{d e f}) + (-4x z-12y z) \indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{a}(A_{d e f})
+factored undesired_terms: (12x z + 36y z) \indexbracket(Γ_{a b}^{d e f})_{α β} \partial_{d}(A_{c e f}) + (-12x z-36y z) \indexbracket(Γ_{a c}^{d e f})_{α β} \partial_{d}(A_{b e f}) + (12x z + 36y z) \indexbracket(Γ_{b c}^{d e f})_{α β} \partial_{d}(A_{a e f})
+
+lorentz_proper_exp: 0
+
+system update: ['-8u v = (1) I', '72x z-72y z = (1) I', '12x z + 36y z = 0', '-12x z-36y z = 0', '12x z + 36y z = 0']
+\indexbracket(Ψ_{a})^{γ}
+
+ex_str D_{\alpha}(D_{\beta}(\indexbracket(\Psi_{a})^{\gamma})) + D_{\beta}(D_{\alpha}(\indexbracket(\Psi_{a})^{\gamma}))
+
+ex D_{α}(D_{β}(\indexbracket(Ψ_{a})^{γ})) + D_{β}(D_{α}(\indexbracket(Ψ_{a})^{γ}))
+
+susy_expand 2v u \indexbracket(Γ_{a})_{α η} \partial_{e}(\indexbracket(Ψ_{d})^{η}) \indexbracket(Γ^{d e})_{β}^{γ} + 2v u \indexbracket(Γ_{d})_{α η} \partial_{e}(\indexbracket(Ψ_{a})^{η}) \indexbracket(Γ^{d e})_{β}^{γ} + 2x \indexbracket(Γ_{a} Γ^{c d e f})_{β}^{γ} z \indexbracket(Γ_{d e})_{α η} \partial_{c}(\indexbracket(Ψ_{f})^{η})-2x \indexbracket(Γ_{a} Γ^{c d e f})_{β}^{γ} z \indexbracket(Γ_{d f})_{α η} \partial_{c}(\indexbracket(Ψ_{e})^{η}) + 2x \indexbracket(Γ_{a} Γ^{c d e f})_{β}^{γ} z \indexbracket(Γ_{e f})_{α η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) + 2y \indexbracket(Γ^{c d e f} Γ_{a})_{β}^{γ} z \indexbracket(Γ_{d e})_{α η} \partial_{c}(\indexbracket(Ψ_{f})^{η})-2y \indexbracket(Γ^{c d e f} Γ_{a})_{β}^{γ} z \indexbracket(Γ_{d f})_{α η} \partial_{c}(\indexbracket(Ψ_{e})^{η}) + 2y \indexbracket(Γ^{c d e f} Γ_{a})_{β}^{γ} z \indexbracket(Γ_{e f})_{α η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) + 2v u \indexbracket(Γ_{a})_{β η} \partial_{e}(\indexbracket(Ψ_{d})^{η}) \indexbracket(Γ^{d e})_{α}^{γ} + 2v u \indexbracket(Γ_{d})_{β η} \partial_{e}(\indexbracket(Ψ_{a})^{η}) \indexbracket(Γ^{d e})_{α}^{γ} + 2x \indexbracket(Γ_{a} Γ^{c d e f})_{α}^{γ} z \indexbracket(Γ_{d e})_{β η} \partial_{c}(\indexbracket(Ψ_{f})^{η})-2x \indexbracket(Γ_{a} Γ^{c d e f})_{α}^{γ} z \indexbracket(Γ_{d f})_{β η} \partial_{c}(\indexbracket(Ψ_{e})^{η}) + 2x \indexbracket(Γ_{a} Γ^{c d e f})_{α}^{γ} z \indexbracket(Γ_{e f})_{β η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) + 2y \indexbracket(Γ^{c d e f} Γ_{a})_{α}^{γ} z \indexbracket(Γ_{d e})_{β η} \partial_{c}(\indexbracket(Ψ_{f})^{η})-2y \indexbracket(Γ^{c d e f} Γ_{a})_{α}^{γ} z \indexbracket(Γ_{d f})_{β η} \partial_{c}(\indexbracket(Ψ_{e})^{η}) + 2y \indexbracket(Γ^{c d e f} Γ_{a})_{α}^{γ} z \indexbracket(Γ_{e f})_{β η} \partial_{c}(\indexbracket(Ψ_{d})^{η})
+Finished 'evaluate' in 6.3823 secs
+
+evaluate -2\indexbracket(Γ_{a})_{α η} \indexbracket(Γ^{b c})_{β}^{γ} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v-2\indexbracket(Γ_{a})_{β η} \indexbracket(Γ^{b c})_{α}^{γ} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v + 2\indexbracket(Γ^{b})_{α η} \indexbracket(Γ_{b}^{c})_{β}^{γ} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v + 2\indexbracket(Γ^{b})_{β η} \indexbracket(Γ_{b}^{c})_{α}^{γ} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v + 12\indexbracket(Γ_{a}^{b})_{α η} \indexbracket(Γ_{b}^{c d})_{β}^{γ} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z-12\indexbracket(Γ_{a}^{b})_{α η} \indexbracket(Γ_{b}^{c d})_{β}^{γ} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z + 12\indexbracket(Γ_{a}^{b})_{β η} \indexbracket(Γ_{b}^{c d})_{α}^{γ} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z-12\indexbracket(Γ_{a}^{b})_{β η} \indexbracket(Γ_{b}^{c d})_{α}^{γ} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z-6\indexbracket(Γ^{b c})_{α η} \indexbracket(Γ_{b c}^{d})_{β}^{γ} \partial_{d}(\indexbracket(Ψ_{a})^{η}) x z + 6\indexbracket(Γ^{b c})_{α η} \indexbracket(Γ_{b c}^{d})_{β}^{γ} \partial_{d}(\indexbracket(Ψ_{a})^{η}) y z + 6\indexbracket(Γ^{b c})_{α η} \indexbracket(Γ_{b c}^{d})_{β}^{γ} \partial_{a}(\indexbracket(Ψ_{d})^{η}) x z-6\indexbracket(Γ^{b c})_{α η} \indexbracket(Γ_{b c}^{d})_{β}^{γ} \partial_{a}(\indexbracket(Ψ_{d})^{η}) y z + 6\indexbracket(Γ^{b c})_{α η} \indexbracket(Γ_{a b c}^{d e})_{β}^{γ} \partial_{d}(\indexbracket(Ψ_{e})^{η}) x z + 6\indexbracket(Γ^{b c})_{α η} \indexbracket(Γ_{a b c}^{d e})_{β}^{γ} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z-6\indexbracket(Γ^{b c})_{β η} \indexbracket(Γ_{b c}^{d})_{α}^{γ} \partial_{d}(\indexbracket(Ψ_{a})^{η}) x z + 6\indexbracket(Γ^{b c})_{β η} \indexbracket(Γ_{b c}^{d})_{α}^{γ} \partial_{d}(\indexbracket(Ψ_{a})^{η}) y z + 6\indexbracket(Γ^{b c})_{β η} \indexbracket(Γ_{b c}^{d})_{α}^{γ} \partial_{a}(\indexbracket(Ψ_{d})^{η}) x z-6\indexbracket(Γ^{b c})_{β η} \indexbracket(Γ_{b c}^{d})_{α}^{γ} \partial_{a}(\indexbracket(Ψ_{d})^{η}) y z + 6\indexbracket(Γ^{b c})_{β η} \indexbracket(Γ_{a b c}^{d e})_{α}^{γ} \partial_{d}(\indexbracket(Ψ_{e})^{η}) x z + 6\indexbracket(Γ^{b c})_{β η} \indexbracket(Γ_{a b c}^{d e})_{α}^{γ} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z
+Finished 'fierz_expand_2index' in 5246.4581 secs
+
+fierz_expand_2index  -  11/8 \indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) u v + 27\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) x z-27\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) y z +  1/8 \indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) u v-27\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) x z + 27\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) y z -  1/8 \indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v-27\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z-15\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z +  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v-15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z-27\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z -  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v + 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z + 27\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z -  9/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v + 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z-15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z +  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v-15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z + 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z +  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v-6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z-15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z -  1/8 \indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v-15\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z-27\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z +  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v-27\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z-15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z -  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v + 27\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z + 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z -  9/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v-15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z + 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z +  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v + 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z-15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z -  1/8 \indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v + 15\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z + 6\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z +  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) u v + 6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) x z + 15\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) y z -  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v-6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z-15\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z +  7/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) u v + 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) x z-3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) y z -  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) u v-3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) x z + 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) y z +  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c}^{d e})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v + 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c}^{d e})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z +  1/16 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v + 3\indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) x z -  1/48 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v -  1/2 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) x z +  1/48 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) u v -  1/2 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) y z -  1/48 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v +  1/2 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z +  1/64 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) u v +  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) x z -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) y z -  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) u v -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) x z +  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) y z -  1/192 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e}^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v +  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e}^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) x z +  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e}^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z +  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) u v +  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) x z +  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) y z -  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) x z -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z -  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) u v -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) x z +  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) y z +  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) u v +  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) x z -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) y z +  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f}^{g h})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{h})^{η}) u v +  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f}^{g h})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{h})^{η}) y z
+desired term:  -  11/8 \indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) u v
+desired term: 27\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) x z
+desired term: -27\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) y z
+gauge term:  1/8 \indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) u v
+gauge term: -27\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) x z
+gauge term: 27\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) y z
+almost undesired term 1:  -  1/8 \indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+lorentz proper term:  -  1/8 \indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+almost undesired term 1: -27\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+lorentz proper term: -27\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+almost undesired term 1: -15\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+lorentz proper term: -15\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 2:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v
+lorentz proper term:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v
+almost undesired term 2: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z
+lorentz proper term: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z
+almost undesired term 2: -27\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z
+lorentz proper term: -27\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+almost undesired term 2: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+lorentz proper term: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+almost undesired term 2: 27\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+lorentz proper term: 27\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 2:  -  9/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+lorentz proper term:  -  9/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+almost undesired term 2: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z
+lorentz proper term: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z
+almost undesired term 2: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+lorentz proper term: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+almost undesired term 2:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+lorentz proper term:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+almost undesired term 2: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z
+lorentz proper term: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z
+almost undesired term 2: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+lorentz proper term: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 1:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v
+lorentz proper term:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v
+almost undesired term 1: -6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z
+lorentz proper term: -6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z
+almost undesired term 1: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z
+lorentz proper term: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z
+undesired term:  -  1/8 \indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+undesired term: -15\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+undesired term: -27\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 2:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v
+lorentz proper term:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v
+almost undesired term 2: -27\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z
+lorentz proper term: -27\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z
+almost undesired term 2: -15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z
+lorentz proper term: -15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+almost undesired term 2: 27\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+lorentz proper term: 27\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+almost undesired term 2: 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+lorentz proper term: 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+undesired term:  -  9/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+undesired term: -15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z
+undesired term: 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+gauge term:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+gauge term: 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z
+gauge term: -15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 1:  -  1/8 \indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v
+lorentz proper term:  -  1/8 \indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v
+almost undesired term 1: 15\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z
+lorentz proper term: 15\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z
+almost undesired term 1: 6\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b}^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z
+lorentz proper term: 6\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z
+almost undesired term 2:  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) u v
+lorentz proper term:  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) u v
+almost undesired term 2: 6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) x z
+lorentz proper term: 6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) x z
+almost undesired term 2: 15\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) y z
+lorentz proper term: 15\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v
+almost undesired term 2: -6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z
+lorentz proper term: -6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z
+almost undesired term 2: -15\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z
+lorentz proper term: -15\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z
+almost undesired term 2:  7/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) u v
+lorentz proper term:  7/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) u v
+almost undesired term 2: 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) x z
+lorentz proper term: 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) x z
+almost undesired term 2: -3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) y z
+lorentz proper term: -3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) y z
+almost undesired term 2:  -  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) u v
+lorentz proper term:  -  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) u v
+almost undesired term 2: -3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) x z
+lorentz proper term: -3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) x z
+almost undesired term 2: 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) y z
+lorentz proper term: 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) y z
+almost undesired term 1:  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c}^{d e})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v
+lorentz proper term:  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c} Γ^{d e})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v
+almost undesired term 1: 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c}^{d e})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z
+lorentz proper term: 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c} Γ^{d e})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z
+undesired term:  1/16 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v
+undesired term: 3\indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) x z
+undesired term:  -  1/48 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+undesired term:  -  1/2 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) x z
+almost undesired term 2:  1/48 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) u v
+lorentz proper term:  1/48 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) u v
+almost undesired term 2:  -  1/2 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) y z
+lorentz proper term:  -  1/2 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) y z
+almost undesired term 2:  -  1/48 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+lorentz proper term:  -  1/48 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+almost undesired term 2:  1/2 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z
+lorentz proper term:  1/2 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z
+undesired term:  1/64 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) u v
+undesired term:  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) x z
+undesired term:  -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) y z
+gauge term:  -  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) u v
+gauge term:  -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) x z
+gauge term:  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) y z
+almost undesired term 1:  -  1/192 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e}^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v
+lorentz proper term:  -  1/192 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v
+almost undesired term 1:  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e}^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) x z
+lorentz proper term:  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) x z
+almost undesired term 1:  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e}^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z
+lorentz proper term:  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z
+almost undesired term 2:  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) u v
+lorentz proper term:  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) u v
+almost undesired term 2:  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) x z
+lorentz proper term:  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) x z
+almost undesired term 2:  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) y z
+lorentz proper term:  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) y z
+almost undesired term 2:  -  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v
+lorentz proper term:  -  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) x z
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) x z
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z
+almost undesired term 2:  -  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) u v
+lorentz proper term:  -  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) u v
+almost undesired term 2:  -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) x z
+lorentz proper term:  -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) x z
+almost undesired term 2:  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) y z
+lorentz proper term:  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) y z
+almost undesired term 2:  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) u v
+lorentz proper term:  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) u v
+almost undesired term 2:  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) x z
+lorentz proper term:  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) x z
+almost undesired term 2:  -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) y z
+lorentz proper term:  -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) y z
+almost undesired term 1:  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f}^{g h})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{h})^{η}) u v
+lorentz proper term:  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f} Γ^{g h})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{h})^{η}) u v
+almost undesired term 1:  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f}^{g h})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{h})^{η}) y z
+lorentz proper term:  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f} Γ^{g h})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{h})^{η}) y z
+gauge term:  1/8 \indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) u v
+gauge term: -15\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) x z
+gauge term: -27\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) y z
+desired term:  -  1/8 \indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) u v
+desired term: 15\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) x z
+desired term: 27\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) y z
+desired term:  -  9/8 \indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) u v
+desired term: 15\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) x z
+desired term: -15\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) y z
+gauge term:  1/8 \indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) u v
+gauge term: -15\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) x z
+gauge term: 15\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) y z
+desired term:  1/8 \indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) u v
+gauge term:  -  1/8 \indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) u v
+almost undesired term 2:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v
+lorentz proper term:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+almost undesired term 2:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+lorentz proper term:  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+desired term: -6\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) x z
+gauge term: 6\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) x z
+almost undesired term 2: -6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z
+lorentz proper term: -6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z
+almost undesired term 2: 6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+lorentz proper term: 6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+almost undesired term 2: 6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z
+lorentz proper term: 6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z
+almost undesired term 2: -6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z
+lorentz proper term: -6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z
+desired term: -15\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) y z
+gauge term: 15\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) y z
+almost undesired term 2: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z
+lorentz proper term: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z
+almost undesired term 2: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a}^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+lorentz proper term: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 2: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+lorentz proper term: 15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+almost undesired term 2: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+lorentz proper term: -15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 2:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v
+lorentz proper term:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+almost undesired term 2: -15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z
+lorentz proper term: -15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z
+almost undesired term 2: 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+lorentz proper term: 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+almost undesired term 2: -6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z
+lorentz proper term: -6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z
+almost undesired term 2: 6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+lorentz proper term: 6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+undesired term:  -  1/8 \indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+gauge term:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+undesired term: -6\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+gauge term: 6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z
+undesired term: -15\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+gauge term: 15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+undesired term:  -  1/8 \indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+undesired term:  -  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+undesired term: -6\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z
+undesired term: -6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z
+undesired term: -15\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+undesired term: -15\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+undesired term:  -  7/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+undesired term: -6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z
+undesired term: 6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+gauge term:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+gauge term: 6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z
+gauge term: -6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+undesired term:  1/8 \indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+undesired term:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+gauge term:  -  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+almost undesired term 2:  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) u v
+lorentz proper term:  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) u v
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v
+almost undesired term 2:  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) u v
+lorentz proper term:  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) u v
+almost undesired term 2:  -  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) u v
+lorentz proper term:  -  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) u v
+undesired term: 6\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+undesired term: 6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+gauge term: -6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 2: 6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) y z
+lorentz proper term: 6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) y z
+almost undesired term 2: -6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b}^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z
+lorentz proper term: -6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z
+almost undesired term 2: 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) y z
+lorentz proper term: 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) y z
+almost undesired term 2: -3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) y z
+lorentz proper term: -3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) y z
+undesired term:  1/16 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v
+undesired term:  -  3/2 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z
+undesired term:  1/16 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v
+undesired term:  -  3/2 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z
+undesired term:  -  1/16 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v
+almost undesired term 2:  1/48 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) u v
+lorentz proper term:  1/48 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) u v
+almost undesired term 2:  -  1/48 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+lorentz proper term:  -  1/48 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+undesired term:  3/2 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) x z
+almost undesired term 2:  -  1/2 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) x z
+lorentz proper term:  -  1/2 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) x z
+almost undesired term 2:  1/2 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) x z
+lorentz proper term:  1/2 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) x z
+undesired term:  3/2 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z
+almost undesired term 2:  -  1/2 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) y z
+lorentz proper term:  -  1/2 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{e})^{η}) y z
+almost undesired term 2:  1/2 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z
+lorentz proper term:  1/2 \indexbracket(Γ^{b c d} Γ^{e})^{γ}_{η} \indexbracket(Γ_{a b c d}^{f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z
+undesired term:  -  1/48 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+gauge term:  -  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) u v
+undesired term:  -  1/2 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) x z
+gauge term:  -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) x z
+undesired term:  -  1/2 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z
+gauge term:  -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) y z
+undesired term:  -  1/48 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+undesired term:  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) u v
+undesired term:  -  1/2 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) x z
+undesired term:  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) x z
+undesired term:  -  1/2 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z
+undesired term:  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) y z
+undesired term:  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) u v
+undesired term:  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) x z
+undesired term:  -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) y z
+gauge term:  -  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) u v
+gauge term:  -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) x z
+gauge term:  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) y z
+undesired term:  1/48 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+undesired term:  -  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) u v
+gauge term:  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) u v
+almost undesired term 2:  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) u v
+lorentz proper term:  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) u v
+almost undesired term 2:  -  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v
+lorentz proper term:  -  1/192 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v
+almost undesired term 2:  -  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) u v
+lorentz proper term:  -  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) u v
+almost undesired term 2:  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) u v
+lorentz proper term:  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) u v
+undesired term:  1/2 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z
+undesired term:  -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) y z
+gauge term:  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) y z
+almost undesired term 2:  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) y z
+lorentz proper term:  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) y z
+almost undesired term 2:  -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e}^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z
+lorentz proper term:  -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z
+almost undesired term 2:  -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) y z
+lorentz proper term:  -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) y z
+almost undesired term 2:  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f}^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) y z
+lorentz proper term:  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) y z
+gauge term:  1/8 \indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) u v
+desired term:  -  1/8 \indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) u v
+desired term:  -  1/8 \indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) u v
+gauge term:  1/8 \indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) u v
+gauge term: -6\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) x z
+desired term: 6\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) x z
+desired term: 6\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) x z
+gauge term: -6\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) x z
+gauge term: -15\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) y z
+desired term: 15\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) y z
+desired term: 15\indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ}) y z
+gauge term: -15\indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) y z
+undesired term:  -  1/8 \indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+gauge term:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+undesired term:  -  1/8 \indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v
+undesired term:  -  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+undesired term:  -  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v
+gauge term:  1/8 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v
+undesired term: -6\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+gauge term: 6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+undesired term: -6\indexbracket(Γ_{a})^{γ}_{η} \indexbracket(Γ^{b c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z
+undesired term: -6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+undesired term: -6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{a})^{η}) y z
+gauge term: 6\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a}(\indexbracket(Ψ_{c})^{η}) y z
+undesired term:  1/16 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v
+undesired term:  1/16 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v
+undesired term:  -  3/2 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) x z
+undesired term:  -  3/2 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) x z
+undesired term:  -  3/2 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z
+undesired term:  -  3/2 \indexbracket(Γ^{b c})^{γ}_{η} \indexbracket(Γ_{a b c}^{d e})_{α β} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z
+undesired term:  -  1/48 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+gauge term:  -  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) u v
+undesired term:  -  1/48 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v
+undesired term:  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) u v
+undesired term:  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) u v
+gauge term:  -  1/192 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) u v
+undesired term:  -  1/2 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z
+gauge term:  -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) y z
+undesired term:  -  1/2 \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \indexbracket(Γ_{b c d}^{e f})_{α β} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z
+undesired term:  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) y z
+undesired term:  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{f}(\indexbracket(Ψ_{a})^{η}) y z
+gauge term:  -  1/8 \indexbracket(Γ^{b c d e})^{γ}_{η} \indexbracket(Γ_{b c d e}^{f})_{α β} \partial_{a}(\indexbracket(Ψ_{f})^{η}) y z
+
+factored pre_desired_terms: ( -  11/4 u v + 63x z) \indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ})
+factored pre_gauge_terms: ( 1/2 u v-63x z) \indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ}) + ( 1/2 u v + 27x z) \indexbracket(Γ_{b}^{c})_{α β} \indexbracket(Γ^{b})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) + ( -  1/48 u v -  3/8 x z) \indexbracket(Γ_{b c d e}^{f})_{α β} \indexbracket(Γ^{b c d e})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{f})^{η})
+factored pre_undesired_terms: ( -  1/2 u v-27x z-63y z) \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) + ( -  9/4 u v-27x z) \indexbracket(Γ_{b}^{c})_{α β} \indexbracket(Γ^{b})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) + ( 1/4 u v +  3/2 x z -  9/2 y z) \indexbracket(Γ_{a b c}^{d e})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) + ( -  1/12 u v -  3/2 x z -  3/2 y z) \indexbracket(Γ_{b c d}^{e f})_{α β} \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \partial_{e}(\indexbracket(Ψ_{f})^{η}) + ( 1/32 u v +  3/8 x z) \indexbracket(Γ_{b c d e}^{f})_{α β} \indexbracket(Γ^{b c d e})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{a})^{η})
+
+Find non-gauge-invariants:
+Definition:
+  -  1/8 \indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v-27\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z-15\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z +  1/4 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v-21\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z-42\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z -  1/4 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v + 21\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z + 42\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z -  5/4 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) u v + 21\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) x z +  1/4 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) u v-21\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) x z +  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v-6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z-15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z +  1/4 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) u v-42\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) x z-21\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c}(\indexbracket(Ψ_{b})^{η}) y z -  1/4 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) u v + 42\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) x z + 21\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b}(\indexbracket(Ψ_{c})^{η}) y z -  1/8 \indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v + 15\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z + 6\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z +  1/4 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) u v + 6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) x z + 21\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) y z -  1/4 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) u v-6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) x z-21\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) y z +  1/2 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) u v + 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) x z -  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) u v-3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) x z +  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c} Γ^{d e})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) u v + 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c} Γ^{d e})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) y z -  1/24 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{e})^{η}) u v +  1/2 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{e})^{η}) x z + \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{e})^{η}) y z +  1/24 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{e}(\indexbracket(Ψ_{f})^{η}) u v -  1/2 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{e}(\indexbracket(Ψ_{f})^{η}) x z-\indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{e}(\indexbracket(Ψ_{f})^{η}) y z -  1/192 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v +  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) x z +  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z +  1/96 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) u v +  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) x z +  1/4 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) y z -  1/96 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) u v -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) x z -  1/4 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) y z -  1/480 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) u v -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) x z +  1/480 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) u v +  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) x z +  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f} Γ^{g h})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{h})^{η}) u v +  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f} Γ^{g h})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{h})^{η}) y z
+Substitution:
+  -  1/8 \indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b c}(\indexbracket(ζ)^{η}) u v-27\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b c}(\indexbracket(ζ)^{η}) x z-15\indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b c}(\indexbracket(ζ)^{η}) y z +  1/4 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c b}(\indexbracket(ζ)^{η}) u v-21\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c b}(\indexbracket(ζ)^{η}) x z-42\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c b}(\indexbracket(ζ)^{η}) y z -  1/4 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b c}(\indexbracket(ζ)^{η}) u v + 21\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b c}(\indexbracket(ζ)^{η}) x z + 42\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b c}(\indexbracket(ζ)^{η}) y z -  5/4 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c a}(\indexbracket(ζ)^{η}) u v + 21\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c a}(\indexbracket(ζ)^{η}) x z +  1/4 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a c}(\indexbracket(ζ)^{η}) u v-21\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a c}(\indexbracket(ζ)^{η}) x z +  1/8 \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c d}(\indexbracket(ζ)^{η}) u v-6\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c d}(\indexbracket(ζ)^{η}) x z-15\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c d}(\indexbracket(ζ)^{η}) y z +  1/4 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c b}(\indexbracket(ζ)^{η}) u v-42\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c b}(\indexbracket(ζ)^{η}) x z-21\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{c b}(\indexbracket(ζ)^{η}) y z -  1/4 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b c}(\indexbracket(ζ)^{η}) u v + 42\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b c}(\indexbracket(ζ)^{η}) x z + 21\indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{a}^{c})_{α β} \partial_{b c}(\indexbracket(ζ)^{η}) y z -  1/8 \indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c d}(\indexbracket(ζ)^{η}) u v + 15\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c d}(\indexbracket(ζ)^{η}) x z + 6\indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c d}(\indexbracket(ζ)^{η}) y z +  1/4 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d c}(\indexbracket(ζ)^{η}) u v + 6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d c}(\indexbracket(ζ)^{η}) x z + 21\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d c}(\indexbracket(ζ)^{η}) y z -  1/4 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c d}(\indexbracket(ζ)^{η}) u v-6\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c d}(\indexbracket(ζ)^{η}) x z-21\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c d}(\indexbracket(ζ)^{η}) y z +  1/2 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d a}(\indexbracket(ζ)^{η}) u v + 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d a}(\indexbracket(ζ)^{η}) x z -  1/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a d}(\indexbracket(ζ)^{η}) u v-3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a d}(\indexbracket(ζ)^{η}) x z +  1/16 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c} Γ^{d e})^{γ}_{η} \partial_{d e}(\indexbracket(ζ)^{η}) u v + 3\indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c} Γ^{d e})^{γ}_{η} \partial_{d e}(\indexbracket(ζ)^{η}) y z -  1/24 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{f e}(\indexbracket(ζ)^{η}) u v +  1/2 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{f e}(\indexbracket(ζ)^{η}) x z + \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{f e}(\indexbracket(ζ)^{η}) y z +  1/24 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{e f}(\indexbracket(ζ)^{η}) u v -  1/2 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{e f}(\indexbracket(ζ)^{η}) x z-\indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{e f}(\indexbracket(ζ)^{η}) y z -  1/192 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f g}(\indexbracket(ζ)^{η}) u v +  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f g}(\indexbracket(ζ)^{η}) x z +  1/8 \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f g}(\indexbracket(ζ)^{η}) y z +  1/96 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g f}(\indexbracket(ζ)^{η}) u v +  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g f}(\indexbracket(ζ)^{η}) x z +  1/4 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g f}(\indexbracket(ζ)^{η}) y z -  1/96 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f g}(\indexbracket(ζ)^{η}) u v -  1/8 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f g}(\indexbracket(ζ)^{η}) x z -  1/4 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f g}(\indexbracket(ζ)^{η}) y z -  1/480 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g a}(\indexbracket(ζ)^{η}) u v -  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g a}(\indexbracket(ζ)^{η}) x z +  1/480 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a g}(\indexbracket(ζ)^{η}) u v +  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a g}(\indexbracket(ζ)^{η}) x z +  1/960 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f} Γ^{g h})^{γ}_{η} \partial_{g h}(\indexbracket(ζ)^{η}) u v +  1/40 \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e f} Γ^{g h})^{γ}_{η} \partial_{g h}(\indexbracket(ζ)^{η}) y z
+Simplification:
+ \indexbracket(Γ^{b})_{α β} \partial_{a b}(\indexbracket(ζ)^{γ}) u v-\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a c}(\indexbracket(ζ)^{η}) u v +  3/4 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} \partial_{a c}(\indexbracket(ζ)^{η}) u v +  3/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a d}(\indexbracket(ζ)^{η}) u v
+Fourier:
+ \indexbracket(Γ^{b})_{α β} u v -1 k1_{a} k1_{b} F1(\indexbracket(ζ)^{γ})-\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} u v -1 k1_{a} k1_{c} F1(\indexbracket(ζ)^{η}) +  3/4 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} u v -1 k1_{a} k1_{c} F1(\indexbracket(ζ)^{η}) +  3/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} u v -1 k1_{a} k1_{d} F1(\indexbracket(ζ)^{η})
+sub_ex_rhs: -k1_{a'} F1(\indexbracket(Ψ_{a})^{γ}) I
+Back-Substitution Rule:
+ k1_{a'} k1_{a} F1(\indexbracket(ζ)^{γ}) → -k1_{a'} F1(\indexbracket(Ψ_{a})^{γ}) I
+Back-Substitution:
+ \indexbracket(Γ^{b})_{α β} u v k1_{a} F1(\indexbracket(Ψ_{b})^{γ}) I-\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} u v k1_{a} F1(\indexbracket(Ψ_{c})^{η}) I +  3/4 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} u v k1_{a} F1(\indexbracket(Ψ_{c})^{η}) I +  3/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} u v k1_{a} F1(\indexbracket(Ψ_{d})^{η}) I
+Transformations:
+ \indexbracket(Γ^{b})_{α β} u v I -I \partial_{a}(\indexbracket(Ψ_{b})^{γ})-\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} u v I -I \partial_{a}(\indexbracket(Ψ_{c})^{η}) +  3/4 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} u v I -I \partial_{a}(\indexbracket(Ψ_{c})^{η}) +  3/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} u v I -I \partial_{a}(\indexbracket(Ψ_{d})^{η})
+gauge term: \indexbracket(Γ^{b})_{α β} u v I -I \partial_{a}(\indexbracket(Ψ_{b})^{γ})
+gauge term: -\indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} u v I -I \partial_{a}(\indexbracket(Ψ_{c})^{η})
+gauge term:  3/4 \indexbracket(Γ^{b})^{γ}_{η} \indexbracket(Γ_{b}^{c})_{α β} u v I -I \partial_{a}(\indexbracket(Ψ_{c})^{η})
+gauge term:  3/8 \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} u v I -I \partial_{a}(\indexbracket(Ψ_{d})^{η})
+
+factored desired_terms: ( -  11/4 u v + 63x z) \indexbracket(Γ^{b})_{α β} \partial_{b}(\indexbracket(Ψ_{a})^{γ})
+factored gauge terms: ( 3/2 u v-63x z) \indexbracket(Γ^{b})_{α β} \partial_{a}(\indexbracket(Ψ_{b})^{γ})-u v \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b}^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) + ( 5/4 u v + 27x z) \indexbracket(Γ_{b}^{c})_{α β} \indexbracket(Γ^{b})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) +  3/8 u v \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c}^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) + ( -  1/48 u v -  3/8 x z) \indexbracket(Γ_{b c d e}^{f})_{α β} \indexbracket(Γ^{b c d e})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{f})^{η})
+factored undesired_terms: ( -  1/2 u v-27x z-63y z) \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) + ( -  9/4 u v-27x z) \indexbracket(Γ_{b}^{c})_{α β} \indexbracket(Γ^{b})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) + ( 1/4 u v +  3/2 x z -  9/2 y z) \indexbracket(Γ_{a b c}^{d e})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) + ( -  1/12 u v -  3/2 x z -  3/2 y z) \indexbracket(Γ_{b c d}^{e f})_{α β} \indexbracket(Γ_{a}^{b c d})^{γ}_{η} \partial_{e}(\indexbracket(Ψ_{f})^{η}) + ( 1/32 u v +  3/8 x z) \indexbracket(Γ_{b c d e}^{f})_{α β} \indexbracket(Γ^{b c d e})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{a})^{η})
+
+lorentz_proper_exp: ( -  1/8 u v-27x z-15y z) \indexbracket(Γ_{a})_{α β} \indexbracket(Γ^{b c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) + ( 1/4 u v-21x z-42y z) \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) + ( -  1/4 u v + 21x z + 42y z) \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a} Γ^{c})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) + ( -  5/4 u v + 21x z) \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{a})^{η}) + ( 1/4 u v-21x z) \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{b} Γ^{c})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{c})^{η}) + ( 1/8 u v-6x z-15y z) \indexbracket(Γ^{b})_{α β} \indexbracket(Γ_{a b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) + ( 1/4 u v-42x z-21y z) \indexbracket(Γ_{a}^{c})_{α β} \indexbracket(Γ^{b})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{b})^{η}) + ( -  1/4 u v + 42x z + 21y z) \indexbracket(Γ_{a}^{c})_{α β} \indexbracket(Γ^{b})^{γ}_{η} \partial_{b}(\indexbracket(Ψ_{c})^{η}) + ( -  1/8 u v + 15x z + 6y z) \indexbracket(Γ_{a}^{b})_{α β} \indexbracket(Γ_{b} Γ^{c d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) + ( 1/4 u v + 6x z + 21y z) \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{c})^{η}) + ( -  1/4 u v-6x z-21y z) \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b} Γ^{d})^{γ}_{η} \partial_{c}(\indexbracket(Ψ_{d})^{η}) + ( 1/2 u v + 3x z) \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{a})^{η}) + ( -  1/8 u v-3x z) \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{b c} Γ^{d})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{d})^{η}) + ( 1/16 u v + 3y z) \indexbracket(Γ^{b c})_{α β} \indexbracket(Γ_{a b c} Γ^{d e})^{γ}_{η} \partial_{d}(\indexbracket(Ψ_{e})^{η}) + ( -  1/24 u v +  1/2 x z + y z) \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{e})^{η}) + ( 1/24 u v -  1/2 x z-y z) \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d} Γ^{f})^{γ}_{η} \partial_{e}(\indexbracket(Ψ_{f})^{η}) + ( -  1/192 u v +  1/8 x z +  1/8 y z) \indexbracket(Γ_{a}^{b c d e})_{α β} \indexbracket(Γ_{b c d e} Γ^{f g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) + ( 1/96 u v +  1/8 x z +  1/4 y z) \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{f})^{η}) + ( -  1/96 u v -  1/8 x z -  1/4 y z) \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{a b c d e} Γ^{g})^{γ}_{η} \partial_{f}(\indexbracket(Ψ_{g})^{η}) + ( -  1/480 u v -  1/40 x z) \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{g}(\indexbracket(Ψ_{a})^{η}) + ( 1/480 u v +  1/40 x z) \indexbracket(Γ^{b c d e f})_{α β} \indexbracket(Γ_{b c d e f} Γ^{g})^{γ}_{η} \partial_{a}(\indexbracket(Ψ_{g})^{η}) + ( 1/115200 u v +  1/4800 y z) ε_{a a' b b' c d}^{g h i j k} \indexbracket(Γ^{a' b b' c d})_{α β} \indexbracket(Γ_{g h i j k} Γ_{e f})^{γ}_{η} \partial^{e}(\indexbracket(Ψ^{f})^{η})
+
+system update: ['-8u v = (1) I', '72x z-72y z = (1) I', '12x z + 36y z = 0', '-12x z-36y z = 0', '12x z + 36y z = 0', ' -  11/4 u v + 63x z = (1) I', ' -  1/2 u v-27x z-63y z = 0', ' -  9/4 u v-27x z = 0', ' 1/4 u v +  3/2 x z -  9/2 y z = 0', ' -  1/12 u v -  3/2 x z -  3/2 y z = 0', ' 1/32 u v +  3/8 x z = 0']
+
+system ['-8u v = (1) I', '72x z-72y z = (1) I', '12x z + 36y z = 0', '-12x z-36y z = 0', '12x z + 36y z = 0', ' -  11/4 u v + 63x z = (1) I', ' -  1/2 u v-27x z-63y z = 0', ' -  9/4 u v-27x z = 0', ' 1/4 u v +  3/2 x z -  9/2 y z = 0', ' -  1/12 u v -  3/2 x z -  3/2 y z = 0', ' 1/32 u v +  3/8 x z = 0']
+
+sol {{u v →  -  1/8 I, x z →  1/96 I, y z →  -  1/288 I}}
+Finished 'susy_solve' in 5524.3036 secs
