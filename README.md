@@ -15,7 +15,7 @@
 * Evaluation of tensor traces.
 * Handling of Feynman propagators.
 * Supersymmetry multiplet solvers.
-* Calculation of a tensor's holoraumy.
+* Calculation of a multiplet's holoraumy.
 
 
 # Installation:
