@@ -15,6 +15,7 @@
 * Evaluation of tensor traces.
 * Handling of Feynman propagators.
 * Supersymmetry multiplet solvers.
+* SUSY-invariant action solver.
 * Calculation of a multiplet's holoraumy.
 
 
