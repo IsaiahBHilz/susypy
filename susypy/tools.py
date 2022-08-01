@@ -1,6 +1,6 @@
 """
 SusyPy: a symbolic algebra system for supersymmetry calculations.
-Copyright (C) 2020  Saul & Isaiah B. Hilsenrath <ihilsenr@umd.edu>
+Copyright (C) 2022  Saul & Isaiah B. Hilsenrath <ihilsenr@umd.edu>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
