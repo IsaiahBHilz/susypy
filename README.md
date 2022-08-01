@@ -20,10 +20,10 @@
 
 # Installation:
 
-To install, you will need the SusyPy wheel file, which has the name `susypy-0.9.2-py3-none-any.whl`. Now, if you are using pip, go to your terminal and run the command
+To install, you will need the SusyPy wheel file, which has the name `susypy-1.0.0-py3-none-any.whl`. Now, if you are using pip, go to your terminal and run the command
 
 ```bash
-pip install susypy-0.9.2-py3-none-any.whl
+pip install susypy-1.0.0-py3-none-any.whl
 ```
 
 Once installed, to use SusyPy, you simply need to write in any Python file
