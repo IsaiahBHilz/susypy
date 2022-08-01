@@ -104,6 +104,26 @@ pretty_print(susy_data)
 
 ### Sec. 2.9: Code Block #2
 __cdbkernel__ = susy_env(D = 4, lorentz_indices=['a', 'b', 'c', 'd'], spinor_indices=[r'\alpha', r'\beta', r'\gamma'])
+Depends(Ex(r'''A{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\lambda{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\indexbracket{\lambda{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\zeta'''), Ex(r'''\partial{#}'''))
+
+bosons = [Ex('A_{a}')]
+fermions = [Ex(r'(\lambda)_{\gamma}')]
+gauge_transs = [Ex(r'0')]
+susy = r'''D_{\alpha}(A_{a}) -> u (\Gamma_{a})_{\alpha}^{\beta} (\lambda)_{\beta}, D_{\alpha}((\lambda)_{\beta}) -> v (\Gamma^{a b})_{\alpha \beta} \partial_{a}(A_{b})'''
+basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
+consts = ['u', 'v']
+indices = [r'_{\alpha}', r'_{\beta}']
+
+susy_sol, susy_data = susy_solve(bosons, fermions, gauge_transs, susy, basis, consts, indices, comm_coef=2)
+print('\n', susy_sol)
+print('\n')
+pretty_print(susy_data)
+
+### Sec. 2.9: Code Block #3
+__cdbkernel__ = susy_env(D = 4, lorentz_indices=['a', 'b', 'c', 'd'], spinor_indices=[r'\alpha', r'\beta', r'\gamma'])
 
 Depends(Ex(r'''A{#}'''), Ex(r'''D{#}, \partial{#}'''))
 Depends(Ex(r'''\lambda{#}'''), Ex(r'''D{#}, \partial{#}'''))

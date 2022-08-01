@@ -1364,7 +1364,7 @@ def susy_solve(bosons: List[Ex], fermions: List[Ex], gauge_transs: List[Ex], sus
 		factor_in(pre_undesired_terms, consts_ex)
 
 		if list(field[r'\indexbracket']) != []:
-			added_terms			 = find_non_gauge_inv(lorentz_proper_exp.top().ex(), field, fields, gauge_trans) if gauge_trans != Ex('0') else Ex('0')
+			added_terms			 = find_non_gauge_inv(lorentz_proper_exp.top().ex(), field, bosons + fermions, gauge_trans) if gauge_trans != Ex('0') else Ex('0')
 			filtered_added_terms = filter_terms(added_terms, field, indices, identify_lorentz_proper=False)
 
 			desired_terms 	+= filtered_added_terms['desired_terms']
@@ -1751,7 +1751,7 @@ def filter_terms_momentum_space(ex: Ex, field: Ex, propagator_sub: Ex, indices: 
 
 def susy_solve_propagator(bosons: List[Ex], fermions: List[Ex], fermion_propagators: List[Ex], susy: str, basis: List[Ex], consts: List[str], indices: List[str], comm_coef: float = 1) -> Ex:
 
-	bosons_sol, _ = susy_solve(bosons, [], susy, basis, consts, indices, comm_coef=comm_coef)
+	bosons_sol, _ = susy_solve(bosons, [], [], susy, basis, consts, indices, comm_coef=comm_coef)
 	system = bosons_sol[0].input_form()[1:-1].replace('->', '=').split(',')
 	consts_ex = Ex(', '.join(consts), False)
 
