@@ -136,9 +136,9 @@ Depends(Ex(r'''d'''), Ex(r'''D{#}, \partial{#}'''))
 bosons = [Ex('A_{a}'), Ex(r'd')]
 fermions = [Ex(r'(\lambda)_{\gamma}')]
 gauge_transs = [Ex(r'0')]
-susy = r'''D_{\alpha}(A_{a}) -> p (\Gamma_{a})_{\alpha}^{\beta} (\lambda)_{\beta}, D_{\alpha}((\lambda)_{\beta}) -> q (\Gamma^{a b})_{\alpha \beta} \partial_{a}(A_{b}) + t C_{\alpha \beta} \partial^{a}(A_{a}) + r (\Gamma')_{\alpha \beta} d, D_{\alpha}(d) -> s (\Gamma' \Gamma^{a})_{\alpha}^{\beta} \partial_{a}((\lambda)_{\beta})'''
+susy = r'''D_{\alpha}(A_{a}) -> u (\Gamma_{a})_{\alpha}^{\beta} (\lambda)_{\beta}, D_{\alpha}((\lambda)_{\beta}) -> v (\Gamma^{a b})_{\alpha \beta} \partial_{a}(A_{b}) + w C_{\alpha \beta} \partial^{a}(A_{a}) + x (\Gamma')_{\alpha \beta} d, D_{\alpha}(d) -> y (\Gamma' \Gamma^{a})_{\alpha}^{\beta} \partial_{a}((\lambda)_{\beta})'''
 basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
-consts = ['p', 'q', 'r', 's', 't']
+consts = ['u', 'v', 'w', 'x', 'y']
 indices = [r'_{\alpha}', r'_{\beta}']
 
 susy_sol, susy_data = susy_solve(bosons, fermions, gauge_transs, susy, basis, consts, indices, comm_coef=2)
@@ -157,7 +157,7 @@ AntiCommuting(Ex(r'''\lambda, D{#}'''))
 AntiCommuting(Ex(r'''\indexbracket{\lambda{#}}{#}, D{#}'''))
 Depends(Ex(r'''d'''), Ex(r'''D{#}, \partial{#}'''))
 
-L = Ex(r'D_{\gamma}(m F_{a b} F^{a b} + n (\Gamma^{a})^{\alpha \beta} (\lambda)_{\alpha} \partial_{a}((\lambda)_{\beta}) + o d d)')
-susy = r'''D_{\alpha}(A_{a}) -> p (\Gamma_{a})_{\alpha}^{\beta} (\lambda)_{\beta}, D_{\alpha}((\lambda)_{\beta}) -> q (\Gamma^{a b})_{\alpha \beta} \partial_{a}(A_{b}) + t C_{\alpha \beta} \partial^{a}(A_{a}) + r (\Gamma')_{\alpha \beta} d, D_{\alpha}(d) -> s (\Gamma' \Gamma^{a})_{\alpha}^{\beta} \partial_{a}((\lambda)_{\beta}), F_{a b} -> \partial_{a}(A_{b}) - \partial_{b}(A_{a})'''
-sol = make_action_susy_inv(L, susy, ['m', 'n', 'o', 'p', 'q', 'r', 's', 't'], [r'\lambda'])
+L = Ex(r'D_{\gamma}(l F_{a b} F^{a b} + m (\Gamma^{a})^{\alpha \beta} (\lambda)_{\alpha} \partial_{a}((\lambda)_{\beta}) + n d d)')
+susy = r'''D_{\alpha}(A_{a}) -> u (\Gamma_{a})_{\alpha}^{\beta} (\lambda)_{\beta}, D_{\alpha}((\lambda)_{\beta}) -> v (\Gamma^{a b})_{\alpha \beta} \partial_{a}(A_{b}) + w C_{\alpha \beta} \partial^{a}(A_{a}) + x (\Gamma')_{\alpha \beta} d, D_{\alpha}(d) -> y (\Gamma' \Gamma^{a})_{\alpha}^{\beta} \partial_{a}((\lambda)_{\beta}), F_{a b} -> \partial_{a}(A_{b}) - \partial_{b}(A_{a})'''
+sol = make_action_susy_inv(L, susy, ['l', 'm', 'n', 'u', 'v', 'w', 'x', 'y'], [r'\lambda'])
 print('\n', sol)
