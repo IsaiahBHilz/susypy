@@ -8,14 +8,14 @@
 ## **Features:**
 * LaTeX-like inputs for tensor expressions.
 * Complete compatibility with Cadabra2's existing library, `Ex`/`ExNode` objects, and tree structure.
-* Complete simplification of tensor expressions in a canonical way
-* Spinor index canonicalization
-* Two and four-index Fierz Expansions
-* Symbolic Fourier and Inverse Fourier transforms
+* Complete simplification of tensor expressions in a canonical way.
+* Spinor-index canonicalization.
+* Two- and four-index Fierz expansions.
+* Symbolic Fourier and inverse Fourier transforms.
 * Evaluation of tensor traces.
-* Handling of oropagators.
+* Handling of Feynman propagators.
 * Supersymmetry multiplet solvers.
-* Calculation of an tensor's holoraumy.
+* Calculation of a tensor's holoraumy.
 
 
 # Installation:
