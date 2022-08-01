@@ -1,3 +1,21 @@
+"""
+SusyPy: a symbolic algebra system for supersymmetry calculations.
+Copyright (C) 2020  Saul & Isaiah B. Hilsenrath <ihilsenr@umd.edu>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
 import sympy
 import pickle
 import cadabra2 as cdb2
@@ -1313,13 +1331,13 @@ def distill_constrs(system: Ex, consts: List[str]) -> Ex:
 
 	return sol
 
-def susy_solve(fields: List[Ex], gauge_transs: List[Ex], susy: str, basis: List[Ex], consts: List[str], indices: List[str], comm_coef: float = 1) -> Tuple[Ex, Dict[Ex, Dict[str, Ex]]]:
+def susy_solve(bosons: List[Ex], fermions: List[Ex], gauge_transs: List[Ex], susy: str, basis: List[Ex], consts: List[str], indices: List[str], comm_coef: float = 1) -> Tuple[Ex, Dict[Ex, Dict[str, Ex]]]:
 
 	susy_dict = dict()
 	system = []
 	consts_ex = Ex(', '.join(consts), False)
 
-	for i, field in enumerate(fields):
+	for i, field in enumerate(fermions+bosons):
 		gauge_trans = gauge_transs[i] if i < len(gauge_transs) else None
 		field_name = nth_arg(field, 0).name if field.top().name == r'\indexbracket' else field.top().name
 

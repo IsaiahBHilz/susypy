@@ -14,14 +14,15 @@ setuptools.setup(
     url='https://github.com/IsaiahBHilz/susypy',
     packages=setuptools.find_packages(),
     install_requires=['sympy', 'cadabra2'],
-    #license='MIT',
+    license='GPLv3',
+    license_files = ('COPYING.txt',),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Programming Language :: Python :: 3 :: Only',
         'Intended Audience :: Science/Research',
         'Topic :: Scientific/Engineering :: Mathematics',
         'Topic :: Scientific/Engineering :: Physics',
-        #"License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent"
     ],
     python_requires='>=3.8'

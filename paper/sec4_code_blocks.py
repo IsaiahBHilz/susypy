@@ -75,12 +75,13 @@ print('\n', ex)
 """
 ## Section 4.4
 ### Sec. 4.4: Code Block #1
-fields = [Ex('h_{a b}'), Ex('A_{a b c}'), Ex(r'(\Psi_{a})^{\gamma}')]
-gauge_transs = [Ex(r'\partial_{a}(\zeta_{b}) + \partial_{b}(\zeta_{a})'), Ex(r'\partial_{a}(\zeta_{b c}) - \partial_{a}(\zeta_{c b}) + \partial_{c}(\zeta_{a b}) - \partial_{c}(\zeta_{b a}) + \partial_{b}(\zeta_{c a}) - \partial_{b}(\zeta_{a c})'), Ex(r'\partial_{a}((\zeta)^{\gamma})')]
+bosons = [Ex('h_{a b}'), Ex('A_{a b c}')]
+fermions = [Ex(r'(\Psi_{a})^{\gamma}')]
+gauge_transs = [Ex(r'\partial_{a}((\zeta)^{\gamma})')]
 basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'(\Gamma^{a b c})_{\alpha \beta}'), Ex(r'(\Gamma^{a b c d})_{\alpha \beta}'), Ex(r'(\Gamma^{a b c d e})_{\alpha \beta}')]
 consts = ['u', 'v', 'x', 'y', 'z']
 indices = [r'_{\alpha}', r'_{\beta}']
-susy_sol, susy_data = susy_solve(fields, gauge_transs, susy, basis, consts, indices)
+susy_sol, susy_data = susy_solve(bosons, fermions, gauge_transs, susy, basis, consts, indices)
 print('\n', susy_sol)
 print('\n')
 pretty_print(susy_data)

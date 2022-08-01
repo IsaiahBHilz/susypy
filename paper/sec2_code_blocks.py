@@ -89,14 +89,15 @@ Depends(Ex(r'''B'''), Ex(r'''D{#}, \partial{#}'''))
 Depends(Ex(r'''\Psi{#}'''), Ex(r'''D{#}, \partial{#}'''))
 Depends(Ex(r'''\indexbracket{\Psi{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
 
-fields = fields = [Ex('A'), Ex('B'), Ex(r'(\Psi)_{\gamma}')]
-gauge_transs = [Ex(r'0'), Ex(r'0'), Ex(r'0')]
+bosons = [Ex('A'), Ex('B')]
+fermions = [Ex(r'(\Psi)_{\gamma}')]
+gauge_transs = [Ex(r'0')]
 susy = r'''D_{\alpha}(A) -> u (\Psi)_{\alpha}, D_{\alpha}(B) -> v (\Gamma')_{\alpha}^{\beta} (\Psi)_{\beta}, D_{\alpha}((\Psi)_{\beta}) -> w (\Gamma^{a})_{\alpha \beta} \partial_{a}(A) + x (\Gamma' \Gamma^{a})_{\alpha \beta} \partial_{a}(B)'''
 basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
 consts = ['u', 'v', 'w', 'x']
 indices = [r'_{\alpha}', r'_{\beta}']
 
-susy_sol, susy_data = susy_solve(fields, gauge_transs, susy, basis, consts, indices, comm_coef=2)
+susy_sol, susy_data = susy_solve(bosons, fermions, gauge_transs, susy, basis, consts, indices, comm_coef=2)
 print('\n', susy_sol)
 print('\n')
 pretty_print(susy_data)
@@ -112,14 +113,15 @@ AntiCommuting(Ex(r'''\indexbracket{\lambda{#}}{#}, D{#}'''))
 Depends(Ex(r'''\zeta'''), Ex(r'''\partial{#}'''))
 Depends(Ex(r'''d'''), Ex(r'''D{#}, \partial{#}'''))
 
-fields = [Ex('A_{a}'), Ex(r'd'), Ex(r'(\lambda)_{\gamma}')]
-gauge_transs = [Ex(r'\partial_{a}(\zeta)'), Ex(r'0'), Ex(r'0')]
+bosons = [Ex('A_{a}'), Ex(r'd')]
+fermions = [Ex(r'(\lambda)_{\gamma}')]
+gauge_transs = [Ex(r'0')]
 susy = r'''D_{\alpha}(A_{a}) -> p (\Gamma_{a})_{\alpha}^{\beta} (\lambda)_{\beta}, D_{\alpha}((\lambda)_{\beta}) -> q (\Gamma^{a b})_{\alpha \beta} \partial_{a}(A_{b}) + t C_{\alpha \beta} \partial^{a}(A_{a}) + r (\Gamma')_{\alpha \beta} d, D_{\alpha}(d) -> s (\Gamma' \Gamma^{a})_{\alpha}^{\beta} \partial_{a}((\lambda)_{\beta})'''
 basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
 consts = ['p', 'q', 'r', 's', 't']
 indices = [r'_{\alpha}', r'_{\beta}']
 
-susy_sol, susy_data = susy_solve(fields, gauge_transs, susy, basis, consts, indices, comm_coef=2)
+susy_sol, susy_data = susy_solve(bosons, fermions, gauge_transs, susy, basis, consts, indices, comm_coef=2)
 print('\n', susy_sol)
 print('\n')
 pretty_print(susy_data)
