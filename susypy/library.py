@@ -1125,14 +1125,17 @@ def find_non_gauge_inv(ex: Ex, field: Ex, fields: List[Ex], gauge_trans: Ex) -> 
 
 	for term in zero_ex.top().terms():
 		for factor in term.factors():
-			a = [0] * len(coeffs)
-			for f_term in factor.terms():
-				name = nth_arg(f_term, 0).name if f_term.name == r'\indexbracket' else f_term.name
-				if name in coeffs:
-					a[int(name[1:])] = f_term.multiplier
-					f_term.erase()
-			A.append(a)
-			B.append([flatten_sum(Ex('(-1)')*factor.ex())])
+			factor_name = nth_arg(factor, 0).name if factor.name == r'\indexbracket' else factor.name
+			if factor.name == r'\sum' or factor_name in coeffs:
+				a = [0] * len(coeffs)
+				for f_term in factor.terms():
+					name = nth_arg(f_term, 0).name if f_term.name == r'\indexbracket' else f_term.name
+					if name in coeffs:
+						a[int(name[1:])] = f_term.multiplier
+						f_term.erase()
+
+				A.append(a)
+				B.append([flatten_sum(Ex('(-1)')*factor.ex())])
 
 	n, m = len(A), len(A[0])
 
@@ -1522,7 +1525,7 @@ def rarita_schwinger_prop():
 	if D > 2:
 		a, b, c = tuple(lorentz_indices[:3])
 
-		return Ex(fr'KleinGordon \eta_{{{a} {b}}} (\Gamma^{{{c}}})_{{\alpha \beta}} k1_{{{c}}} + (1/{D-2}) KleinGordon (\Gamma_{{{a}}} \Gamma^{{{c}}} \Gamma_{{{b}}})_{{\alpha \beta}} k1_{{{c}}}')
+		return Ex(fr'I KleinGordon \delta_{{{a} {b}}} (\Gamma^{{{c}}})_{{\alpha \beta}} k1_{{{c}}} + (1/{D-2}) I KleinGordon (\Gamma_{{{a}}} \Gamma^{{{c}}} \Gamma_{{{b}}})_{{\alpha \beta}} k1_{{{c}}}')
 	else:
 		raise ValueError(f'This function only returns Rarita-Schwinger Feynman propagators for dimension D > 2. You have D = {D}.')	
 
@@ -1547,6 +1550,8 @@ def gen_prop_sub(field: Ex, propagator: Ex, is_boson: bool = False) -> Ex:
 	field_lorentzs = get_indices(field, rel=True, free=True, lorentz=True, remove_duplicates=True)
 	propagator_lorentzs = get_indices(propagator, rel=True, free=True, lorentz=True, remove_duplicates=True)
 
+	primed_last_propagator_lorentzs = [i[:-1] + "'}" for i in propagator_lorentzs[len(field_lorentzs):]] # new
+
 	for term in propagator.top().terms():
 		propagator_lorentzs_wo_rel = get_indices(term, free=True, lorentz=True, remove_duplicates=True)
 		k_inds = sum([get_indices(k) for k in term['k1']], [])
@@ -1561,16 +1566,21 @@ def gen_prop_sub(field: Ex, propagator: Ex, is_boson: bool = False) -> Ex:
 	swap_dummy(propagator, propagator_dummies, primed_propagator_dummies)
 
 	if len(field_spinors) == 1:
-		old_prop_inds = propagator_spinors + propagator_lorentzs[:len(field_lorentzs)]
-		new_prop_inds = [field_spinors[0], '^' + propagator_spinors[1][1:]] + field_lorentzs
+		#old_prop_inds = propagator_spinors + propagator_lorentzs[:len(field_lorentzs)]
+		#new_prop_inds = [field_spinors[0], '^' + propagator_spinors[1][1:]] + field_lorentzs
+		old_prop_inds = propagator_spinors + propagator_lorentzs
+		new_prop_inds = [field_spinors[0], '^' + propagator_spinors[1][1:]] + field_lorentzs + primed_last_propagator_lorentzs
 	else:
-		old_prop_inds = propagator_lorentzs[:len(field_lorentzs)]
-		new_prop_inds = field_lorentzs
+		#old_prop_inds = propagator_lorentzs[:len(field_lorentzs)]
+		#new_prop_inds = field_lorentzs
+		old_prop_inds = propagator_lorentzs
+		new_prop_inds = field_lorentzs + primed_last_propagator_lorentzs
 
 	propagator = swap(propagator, old_prop_inds, new_prop_inds)
 
 	coupling_current = coupling_current_name(field)
-	coupling_current_indices = manipulate_indices(propagator, propagator_lorentzs[len(field_lorentzs):])
+	#coupling_current_indices = manipulate_indices(propagator, propagator_lorentzs[len(field_lorentzs):])
+	coupling_current_indices = manipulate_indices(propagator, new_prop_inds[2+len(field_lorentzs):])
 
 	if len(field_spinors) == 1:
 		sub_rule = Ex(rf'''F1({field.input_form()}) -> (-1) ({propagator.input_form()}) F1(({coupling_current}{''.join(coupling_current_indices)})_{{{propagator_spinors[1][1:]}}})''', False)
@@ -1761,6 +1771,7 @@ def susy_solve_propagator(bosons: List[Ex], fermions: List[Ex], fermion_propagat
 		susy_expand(ex, susy)
 		evaluate(ex, to_perform_subs=False)
 		fierz_expand_2index(ex, basis, indices, to_perform_subs=False)
+		#ex = load(f'../tests/test_exs/save4_{field.input_form()}.p')
 
 		fourier(ex, fermions)
 

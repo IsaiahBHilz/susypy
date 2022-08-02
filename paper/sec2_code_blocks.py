@@ -1,9 +1,9 @@
 import sys
 sys.path.append('../')
 
-from cadabra2 import AntiCommuting, Depends, Ex
+from cadabra2 import AntiCommuting, AntiSymmetric, Depends, Ex
 from cadabra2 import canonicalise, eliminate_kronecker, collect_terms
-from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, fourier, inverse_fourier, make_action_susy_inv, susy_env, susy_expand, susy_solve
+from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, find_non_gauge_inv, fourier, inverse_fourier, make_action_susy_inv, susy_env, susy_expand, susy_solve
 from susypy.tools import pretty_print
 
 # SECTION 2
@@ -79,6 +79,17 @@ print('\n', ex)
 inverse_fourier(ex)
 canonicalise(ex)
 print('\n', ex)
+
+## Section 2.8
+### Sec. 2.8: Code Block #1
+__cdbkernel__ = susy_env(D=4)
+AntiSymmetric(Ex(r'''B{#}'''))
+Depends(Ex(r'''B{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\zeta{#}'''), Ex(r'''D{#}, \partial{#}'''))
+field = Ex(r'B_{a b}')
+gauge_trans = Ex(r'\partial_{a}(\zeta_{b}) - \partial_{b}(\zeta_{a})')
+ex = Ex(r'(u + v) (\Gamma^{a})_{\alpha \beta} \partial_{a}(B_{b c}) - v (\Gamma^{a})_{\alpha \beta} \partial_{b}(B_{a c}) + (u + v) (\Gamma^{a})_{\alpha \beta} \partial_{c}(B_{a b})')
+print('\n', find_non_gauge_inv(ex, field, [field], gauge_trans))
 
 ## Section 2.9
 ### Sec. 2.9: Code Block #1

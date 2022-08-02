@@ -2,7 +2,7 @@ import sys
 sys.path.append('../')
 
 from cadabra2 import Depends, Ex, Symmetric, AntiSymmetric
-from susypy import susy_env, susy_solve_propagator
+from susypy import susy_env, susy_solve_propagator, rarita_schwinger_prop
 
 __cdbkernel__ = susy_env(D=4)
 
@@ -20,7 +20,7 @@ basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gam
 consts = ['u', 'v', 'w', 'x']
 indices = [r'_{\alpha}', r'_{\beta}']
 sol = susy_solve_propagator(bosons, fermions, fermion_propagators, susy, basis, consts, indices, comm_coef=2)
-print(sol)
+print('\n', sol)
 
 # Vector
 Depends(Ex(r'''A{#}'''), Ex(r'''D{#}, \partial{#}'''))
@@ -36,7 +36,7 @@ basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gam
 consts = ['u', 'v']
 indices = [r'_{\alpha}', r'_{\beta}']
 sol = susy_solve_propagator(bosons, fermions, fermion_propagators, susy, basis, consts, indices, comm_coef=2)
-print(sol)
+print('\n', sol)
 
 # Axial-Vector
 Depends(Ex(r'''U{#}'''), Ex(r'''D{#}, \partial{#}'''))
@@ -52,7 +52,7 @@ basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gam
 consts = ['u', 'v']
 indices = [r'_{\alpha}', r'_{\beta}']
 sol = susy_solve_propagator(bosons, fermions, fermion_propagators, susy, basis, consts, indices, comm_coef=2)
-print(sol)
+print('\n', sol)
 
 # Matter-Gravitino
 Depends(Ex(r'''B{#}'''), Ex(r'''D{#}, \partial{#}'''))
@@ -63,14 +63,14 @@ Depends(Ex(r'''\indexbracket{\zeta{#}}{#}'''), Ex(r'''\partial{#}'''))
 
 bosons = [Ex('B_{a}')]
 fermions = [Ex(r'(\Psi_{a})_{\gamma}')]
-fermion_propagators = [Ex(r"I (k1^{a} k1_{a})**(-1) (\delta_{b c} (\Gamma^{d})_{\alpha \beta} k1_{d} + (1/2) (\Gamma_{b} \Gamma^{d} \Gamma_{c})_{\alpha \beta} k1_{d})")]
+fermion_propagators = [rarita_schwinger_prop()]
 susy = r'''D_{\alpha}(B_{a}) -> u (\Psi_{a})_{\alpha}, D_{\alpha}((\Psi_{a})_{\beta}) -> v (\Gamma_{a} \Gamma^{b c})_{\alpha \beta} \partial_{b}(B_{c})'''
 basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
 consts = ['u', 'v']
 #consts = ['v', 'w', 'x', 'y']
 indices = [r'_{\alpha}', r'_{\beta}']
 sol = susy_solve_propagator(bosons, fermions, fermion_propagators, susy, basis, consts, indices, comm_coef=2)
-print(sol)
+print('\n', sol)
 
 # Supergravity
 Depends(Ex(r'''h{#}'''), Ex(r'''D{#}, \partial{#}'''))
@@ -82,10 +82,10 @@ Symmetric(Ex(r'''h{#}'''))
 
 bosons = [Ex('h_{a b}')]
 fermions = [Ex(r'(\Psi_{a})_{\gamma}')]
-fermion_propagators = [Ex(r"I (k1^{a} k1_{a})**(-1) (\delta_{b c} (\Gamma^{d})_{\alpha \beta} k1_{d} + (1/2) (\Gamma_{b} \Gamma^{d} \Gamma_{c})_{\alpha \beta} k1_{d})")]
+fermion_propagators = [rarita_schwinger_prop()]
 susy = r'''D_{\alpha}(h_{a b}) -> u (\Gamma_{a})_{\alpha}^{\beta} (\Psi_{b})_{\beta} + u (\Gamma_{b})_{\alpha}^{\beta} (\Psi_{a})_{\beta}, D_{\alpha}((\Psi_{a})_{\beta}) -> v (\Gamma^{b c})_{\alpha \beta} \partial_{b}(h_{c a})'''
 basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
 consts = ['u', 'v']
 indices = [r'_{\alpha}', r'_{\beta}']
 sol = susy_solve_propagator(bosons, fermions, fermion_propagators, susy, basis, consts, indices, comm_coef=2)
-print(sol)
+print('\n', sol)
