@@ -2,7 +2,7 @@ import sys
 sys.path.append('../')
 
 from cadabra2 import AntiCommuting, AntiSymmetric, Depends, Ex
-from cadabra2 import canonicalise, eliminate_kronecker, collect_terms
+from cadabra2 import canonicalise, eliminate_kronecker, collect_terms, split_gamma
 from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, find_non_gauge_inv, fourier, inverse_fourier, make_action_susy_inv, susy_env, susy_expand, susy_solve, sym_proj_decomp, sym_prop
 from susypy.tools import pretty_print
 
@@ -173,8 +173,12 @@ prop = sym_prop(2)
 print('\n', prop)
 
 ## Sec. 2.10: Code Block #4
-prop = sym_prop(3/2)
-print('\n', prop)
+ex = sym_prop(3/2)
+print('\n', ex)
+split_gamma(ex, on_back=True)
+split_gamma(ex, on_back=True)
+evaluate(ex, to_join_gamma=False)
+print('\n', ex)
 
 ## Section 2.12
 ### Sec. 2.12: Code Block #1
