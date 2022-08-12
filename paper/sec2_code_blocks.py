@@ -3,7 +3,7 @@ sys.path.append('../')
 
 from cadabra2 import AntiCommuting, AntiSymmetric, Depends, Ex
 from cadabra2 import canonicalise, eliminate_kronecker, collect_terms
-from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, find_non_gauge_inv, fourier, inverse_fourier, make_action_susy_inv, susy_env, susy_expand, susy_solve
+from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, find_non_gauge_inv, fourier, inverse_fourier, make_action_susy_inv, susy_env, susy_expand, susy_solve, sym_proj_decomp, sym_prop
 from susypy.tools import pretty_print
 
 # SECTION 2
@@ -156,6 +156,25 @@ susy_sol, susy_data = susy_solve(bosons, fermions, gauge_transs, susy, basis, co
 print('\n', susy_sol)
 print('\n')
 pretty_print(susy_data)
+
+# Section 2.10
+__cdbkernel__ = susy_env(D=4)
+
+## Sec. 2.10: Code Block #1
+subs = sym_proj_decomp(3)
+print('\n', subs)
+
+## Sec. 2.10: Code Block #2
+subs = sym_proj_decomp(3/2)
+print('\n', subs)
+
+## Sec. 2.10: Code Block #3
+prop = sym_prop(2)
+print('\n', prop)
+
+## Sec. 2.10: Code Block #4
+prop = sym_prop(3/2)
+print('\n', prop)
 
 ## Section 2.12
 ### Sec. 2.12: Code Block #1

@@ -1483,19 +1483,27 @@ def sym_proj_decomp(s: float, to_perform_subs: bool = False) -> Ex:
 		summand = Ex('0')
 		for r in range(0, s // 2 + 1):
 			summand += Ex(f'({proj_coef(r, s)})' + ' '.join([f'P^{{a{2*i-1} a{2*i}}} P^{{b{2*i-1} b{2*i}}}' for i in range(1, r+1)]) + ' '.join([f'P^{{a{i} b{i}}}' for i in range(2*r+1, s+1)]))
-		map_sympy(summand, "simplify")
+		#map_sympy(summand, "simplify")
 		if s > 1:
-			asym(summand, Ex(', '.join([f'^{{a{i}}}' for i in range(1, s+1)]), False))
-			asym(summand, Ex(', '.join([f'^{{b{i}}}' for i in range(1, s+1)]), False))
+			asym(summand, Ex(', '.join([f'^{{a{i}}}' for i in range(1, s+1)]), False), antisymmetric=False)
+			asym(summand, Ex(', '.join([f'^{{b{i}}}' for i in range(1, s+1)]), False), antisymmetric=False)
 
-		return Ex(f"P^{{{' '.join([f'a{i}' for i in range(1, s+1)] + [f'b{i}' for i in range(1, s+1)])}}} -> {summand}", False)
+		evaluate(summand, to_perform_subs=False)
+
+		return Ex(f"P^{{{' '.join([f'a{i}' for i in range(1, s+1)] + [f'b{i}' for i in range(1, s+1)])}}} -> {summand.input_form()}", False)
 
 	elif int(s*2) % 2 == 1:
 		Q = Ex(fr"({ceil(s)})/({int(2*s+2)}) (\Gamma_{{a}} \Gamma_{{b}})_{{\alpha \beta}} P^{{a {' '.join([f'a{i}' for i in range(1, ceil(s))])} b {' '.join([f'b{i}' for i in range(1, ceil(s))])}}}")
 		substitute(Q, sym_proj_decomp(ceil(s)))
+		evaluate(Q, to_perform_subs=False)
+		substitute(Q, Ex(r'P^{a}_{a} -> 3', False))
+		substitute(Q, Ex(r'P^{a b} P_{b c} -> P^{a}_{c}', False))
+		substitute(Q, Ex(r'P^{a b} P_{c b} -> P^{a}_{c}', False))
+		substitute(Q, Ex(r'P^{b a} P_{b c} -> P^{a}_{c}', False))
+		substitute(Q, Ex(r'P^{b a} P_{c b} -> P^{a}_{c}', False))
 		evaluate(Q, to_perform_subs=to_perform_subs)
 
-		return Ex(f"Q^{{{' '.join([f'a{i}' for i in range(1, ceil(s))] + [f'b{i}' for i in range(1, ceil(s))])}}} -> {Q}")
+		return Ex(fr"(Q^{{{' '.join([f'a{i}' for i in range(1, ceil(s))] + [f'b{i}' for i in range(1, ceil(s))])}}})_{{\alpha \beta}} -> {Q.input_form()}", False)
 
 	else:
 		raise ValueError(f'The spin s must be an integer or half-integer, while you inputted s = {s}.')
@@ -1505,7 +1513,7 @@ def sym_prop(s: float, to_perform_subs: bool = False) -> Ex:
 		D = Ex(f"KleinGordon P^{{{' '.join([f'a{i}' for i in range(1, s+1)] + [f'b{i}' for i in range(1, s+1)])}}}")
 
 	elif int(s*2) % 2 == 1:
-		D = Ex(fr"I KleinGordon (\Gamma^{{b}})_{{\alpha \beta}} k1_{{b}} Q^{{{' '.join([f'a{i}' for i in range(1, ceil(s))] + [f'b{i}' for i in range(1, ceil(s))])}}}")
+		D = Ex(fr"I KleinGordon (\Gamma^{{b}})_{{\alpha}}^{{\gamma}} k1_{{b}} (Q^{{{' '.join([f'a{i}' for i in range(1, ceil(s))] + [f'b{i}' for i in range(1, ceil(s))])}}})_{{\gamma \beta}}")
 
 	else:
 		raise ValueError(f'The spin s must be an integer or half-integer, while you inputted s = {s}.')
@@ -1519,7 +1527,7 @@ def sym_prop(s: float, to_perform_subs: bool = False) -> Ex:
 
 	return D
 
-def rarita_schwinger_prop():
+def rarita_schwinger_prop() -> Ex:
 	global D, lorentz_indices
 
 	if D > 2:

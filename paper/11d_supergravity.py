@@ -30,6 +30,8 @@ consts = ['u', 'v', 'x', 'y', 'z', 'l', 'm', 'n']
 indices = [r'_{\alpha}', r'_{\beta}']
 
 susy_sol, susy_data = logger('../logs/susy_solve_test')(timer(susy_solve))(bosons, fermions, gauge_transs, susy, basis, consts, indices)
+print('\n', susy_sol)
+print('\n')
 pretty_print(susy_data)
 
 act_sol = timer(make_action_susy_inv)(L, susy, consts, [r'\Psi'])
@@ -37,4 +39,5 @@ print('\n', act_sol)
 
 subs = Ex('u -> 1, v -> (-1/8) I, x -> 1/48 I, y -> (-1/144) I, z -> 1/2', False)
 holo_data = logger('../logs/holo_test')(timer(holoraumy))(bosons+fermions, susy, basis, subs, indices)
+print('\n')
 pretty_print(holo_data)

@@ -25,4 +25,4 @@ python3 11d_supergravity.py
 printf "\nRUNNING 'sec3_code_blocks.py':\n"
 python3 sec3_code_blocks.py
 
-printf "Finished running all scripts!!!\n"
+printf "\nFinished running all scripts!!!\n"
