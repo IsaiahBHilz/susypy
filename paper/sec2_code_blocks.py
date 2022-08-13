@@ -1,9 +1,9 @@
 import sys
 sys.path.append('../')
 
-from cadabra2 import AntiCommuting, AntiSymmetric, Depends, Ex
-from cadabra2 import canonicalise, eliminate_kronecker, collect_terms, split_gamma
-from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, find_non_gauge_inv, fourier, inverse_fourier, make_action_susy_inv, susy_env, susy_expand, susy_solve, sym_proj_decomp, sym_prop
+from cadabra2 import AntiCommuting, AntiSymmetric, Depends, Ex, Symmetric
+from cadabra2 import canonicalise, collect_terms, eliminate_kronecker, split_gamma
+from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, find_non_gauge_inv, fourier, inverse_fourier, make_action_susy_inv, rarita_schwinger_prop, susy_env, susy_expand, susy_solve, sym_proj_decomp, sym_prop, susy_solve_propagator
 from susypy.tools import pretty_print
 
 # SECTION 2
@@ -22,7 +22,6 @@ eliminate_kronecker(ex)
 canonicalise(ex)
 collect_terms(ex)
 print('\n', ex)
-
 
 ## Section 2.5
 __cdbkernel__ = susy_env()
@@ -157,28 +156,92 @@ print('\n', susy_sol)
 print('\n')
 pretty_print(susy_data)
 
-# Section 2.10
+## Section 2.10
 __cdbkernel__ = susy_env(D=4)
 
-## Sec. 2.10: Code Block #1
+### Sec. 2.10: Code Block #1
 subs = sym_proj_decomp(3)
 print('\n', subs)
 
-## Sec. 2.10: Code Block #2
+### Sec. 2.10: Code Block #2
 subs = sym_proj_decomp(3/2)
 print('\n', subs)
 
-## Sec. 2.10: Code Block #3
+### Sec. 2.10: Code Block #3
 prop = sym_prop(2)
 print('\n', prop)
 
-## Sec. 2.10: Code Block #4
+### Sec. 2.10: Code Block #4
+prop = sym_prop(3/2)
+print('\n', prop)
+
+### Sec. 2.10: Code Block #5
 ex = sym_prop(3/2)
-print('\n', ex)
 split_gamma(ex, on_back=True)
 split_gamma(ex, on_back=True)
 evaluate(ex, to_join_gamma=False)
 print('\n', ex)
+
+### Sec. 2.10: Code Block #6
+__cdbkernel__ = susy_env(D=11)
+prop = rarita_schwinger_prop()
+print('\n', prop)
+
+## Section 2.11
+### Sec. 2.11: Equation 2.11.5
+__cdbkernel__ = susy_env(D=4)
+print(evaluate(rarita_schwinger_prop()))
+
+### Sec. 2.11: Code Block #1 (Axial-Vector)
+Depends(Ex(r'''U{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\lambda{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\indexbracket{\lambda{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\zeta'''), Ex(r'''\partial{#}'''))
+
+bosons = [Ex('U_{a}')]
+fermions = [Ex(r'(\lambda)_{\gamma}')]
+fermion_propagators = [sym_prop(1/2)]
+susy = r'''D_{\alpha}(U_{a}) -> u (\Gamma' \Gamma_{a})_{\alpha}^{\beta} (\lambda)_{\beta}, D_{\alpha}((\lambda)_{\beta}) -> v (\Gamma' \Gamma^{a b})_{\alpha \beta} \partial_{a}(U_{b})'''
+basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
+consts = ['u', 'v']
+indices = [r'_{\alpha}', r'_{\beta}']
+sol = susy_solve_propagator(bosons, fermions, fermion_propagators, susy, basis, consts, indices, comm_coef=2)
+print('\n', sol)
+
+### Sec. 2.11: Code Block #2 (Matter-Gravitino)
+Depends(Ex(r'''B{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\Psi{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\indexbracket{\Psi{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\zeta{#}'''), Ex(r'''\partial{#}'''))
+Depends(Ex(r'''\indexbracket{\zeta{#}}{#}'''), Ex(r'''\partial{#}'''))
+
+bosons = [Ex('B_{a}')]
+fermions = [Ex(r'(\Psi_{a})_{\gamma}')]
+fermion_propagators = [rarita_schwinger_prop()]
+susy = r'''D_{\alpha}(B_{a}) -> u (\Psi_{a})_{\alpha}, D_{\alpha}((\Psi_{a})_{\beta}) -> v (\Gamma_{a} \Gamma^{b c})_{\alpha \beta} \partial_{b}(B_{c})'''
+basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
+consts = ['u', 'v']
+indices = [r'_{\alpha}', r'_{\beta}']
+sol = susy_solve_propagator(bosons, fermions, fermion_propagators, susy, basis, consts, indices, comm_coef=2)
+print('\n', sol)
+
+### Sec. 2.11: Code Block #3 (Supergravity)
+Depends(Ex(r'''h{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\Psi{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\indexbracket{\Psi{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\zeta{#}'''), Ex(r'''\partial{#}'''))
+Depends(Ex(r'''\indexbracket{\zeta{#}}{#}'''), Ex(r'''\partial{#}'''))
+Symmetric(Ex(r'''h{#}'''))
+
+bosons = [Ex('h_{a b}')]
+fermions = [Ex(r'(\Psi_{a})_{\gamma}')]
+fermion_propagators = [rarita_schwinger_prop()]
+susy = r'''D_{\alpha}(h_{a b}) -> u (\Gamma_{a})_{\alpha}^{\beta} (\Psi_{b})_{\beta} + u (\Gamma_{b})_{\alpha}^{\beta} (\Psi_{a})_{\beta}, D_{\alpha}((\Psi_{a})_{\beta}) -> v (\Gamma^{b c})_{\alpha \beta} \partial_{b}(h_{c a})'''
+basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
+consts = ['u', 'v']
+indices = [r'_{\alpha}', r'_{\beta}']
+sol = susy_solve_propagator(bosons, fermions, fermion_propagators, susy, basis, consts, indices, comm_coef=2)
+print('\n', sol)
 
 ## Section 2.12
 ### Sec. 2.12: Code Block #1

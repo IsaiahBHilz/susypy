@@ -1518,9 +1518,14 @@ def sym_prop(s: float, to_perform_subs: bool = False) -> Ex:
 	else:
 		raise ValueError(f'The spin s must be an integer or half-integer, while you inputted s = {s}.')
 
+	#print('\n D', D)
+	#print('\n subs', sym_proj_decomp(s))
 	substitute(D, sym_proj_decomp(s))
+	#print('\n D', D)
 	substitute(D, Ex(r'P^{a1 b1} -> \delta^{a1 b1} - (k1^{a1} k1^{b1}) KleinGordon'))
+	#print('\n D', D)
 	evaluate(D, to_perform_subs=to_perform_subs)
+	#print('\n D', D)
 	expand_power(D)
 	substitute_KleinGordon(D)
 	collect_terms(D)
@@ -1750,11 +1755,13 @@ def filter_terms_momentum_space(ex: Ex, field: Ex, propagator_sub: Ex, indices: 
 
 			if intersection(remove_coeffs(remainder), normalized_undesired_terms):
 				undesired_terms.append(term)
-				#print('undesired term:', term)
+				#print('undesired term 2:', term)
 			else:
 				remainder *= Ex(f'(-1) ({term_coeff})/({original_term.input_form()})')
 				terms += [t.ex() for t in remainder.top().terms()]
 				#print('Schouten undesired term:', term)
+				#print('remainder:', remainder)
+				#print('antisymmetrised_term:', antisymmetrised_term)
 		else:
 			undesired_terms.append(term)
 			#print('undesired term:', term)
