@@ -642,16 +642,18 @@ def spinor_combine(ex: Ex) -> Ex:
 						inners[i] = Ex(f'C{outer_indices[i-1][0]}{outer_indices[i][1]}')
 
 					elif list(spinor_factors[i-1][r'\indexbracket']) and spinor_factors[i].top().name == 'C':
-						indexbracket = list(spinor_factors[i-1][r'\indexbracket'])[0]
-						coeff3 = str(indexbracket.multiplier)
+						#indexbracket = list(spinor_factors[i-1][r'\indexbracket'])[0]
+						indexbracket = next(spinor_factors[i-1][r'\indexbracket'])
+						coeff3 = str(indexbracket.multiplier) if indexbracket.ex() != spinor_factors[i-1] else '1'
 						spinor_factors[i-1] = Ex(f'1/({coeff3})') * spinor_factors[i-1]
 						spinor_factors[i-1][indexbracket] = Ex(fr'''({const}) ({coeff1}) ({coeff2}) ({coeff3}) \indexbracket{{{inners[i-1].input_form()}}}{outer_indices[i-1][0] or ''}{outer_indices[i][1] or ''}''')
 						spinor_factors[i] = spinor_factors[i-1]
 						inners[i] = inners[i-1]
 
 					elif spinor_factors[i-1].top().name == 'C' and list(spinor_factors[i][r'\indexbracket']):
-						indexbracket = list(spinor_factors[i][r'\indexbracket'])[0]
-						coeff3 = str(indexbracket.multiplier)
+						#indexbracket = list(spinor_factors[i][r'\indexbracket'])[0]
+						indexbracket = next(spinor_factors[i][r'\indexbracket'])
+						coeff3 = str(indexbracket.multiplier) if indexbracket.ex() != spinor_factors[i] else '1'
 						spinor_factors[i] = Ex(f'1/({coeff3})') * spinor_factors[i]
 						spinor_factors[i][indexbracket] = Ex(fr'''({const}) ({coeff1}) ({coeff2}) ({coeff3}) \indexbracket{{{inners[i].input_form()}}}{outer_indices[i-1][0] or ''}{outer_indices[i][1] or ''}''')
 

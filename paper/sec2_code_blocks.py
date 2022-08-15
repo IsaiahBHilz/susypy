@@ -2,9 +2,93 @@ import sys
 sys.path.append('../')
 
 from cadabra2 import AntiCommuting, AntiSymmetric, Depends, Ex, Symmetric
-from cadabra2 import canonicalise, collect_terms, distribute, eliminate_kronecker, split_gamma
+from cadabra2 import canonicalise, collect_terms, decompose_product, distribute, eliminate_kronecker, factor_in, split_gamma
 from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, find_non_gauge_inv, fourier, holoraumy, indexbracket_hex, inverse_fourier, make_action_susy_inv, rarita_schwinger_prop, substitute, susy_env, susy_expand, susy_solve, sym_proj_decomp, sym_prop, susy_solve_propagator
 from susypy.tools import pretty_print
+
+# SECTION 2
+## Section 2.1
+### Sec. 2.1: Code Block #1
+import cadabra2 as cdb
+import susypy as susy
+
+### Sec. 2.1: Code Block #2
+ex1 = cdb.Ex(r'(A_{a} B_{b} + E_{a b}) \Psi^{c}') 
+ex2 = cdb.Ex(r'G_{a} \Theta_{b}^{c}')
+ex = ex1 + ex2
+print('\n', ex)
+
+### Sec. 2.1: Code Block #3
+sub = cdb.Ex(r'A_{a} -> G_{a}{}^{d} H_{d}, \Theta_{e}{}^{f} -> \Psi_{e}{}^{f}', False)
+cdb.substitute(ex, sub)
+print('\n', ex)
+
+### Sec. 2.1: Code Block #4
+__cdbkernel__ = susy.susy_env(D = 4, lorentz_indices=['a', 'b', 'c', 'd'], spinor_indices=[r'\alpha', r'\beta', r'\gamma', r'\eta'], desired_syms=[1,1], rep=-1)
+
+### Sec. 2.1: Code Block #5
+ex1 = cdb.Ex(r'(\Gamma_{a})_{\alpha}^{\beta} (\Gamma^{b})_{\beta}^{\alpha}')
+susy.evaluate(ex1)
+print('\n', ex1)
+ex2 = cdb.Ex(r'(\Gamma^{a})_{\beta \alpha}')
+cdb.canonicalise(ex2)
+print('\n', ex2)
+ex3 = cdb.Ex(r'(A_{d} B^{d})_{\gamma}^{\gamma}')
+cdb.rename_dummies(ex3)
+print('\n', ex3)
+
+### Sec. 2.1: Code Block #6
+__cdbkernel__ = susy.susy_env(D = 11, lorentz_indices=[r'\alpha', r'\beta', r'\gamma', r'\zeta', r'\eta', r'\theta', r'\iota', r'\kappa', r'\lambda', r'\mu', r'\nu'], spinor_indices=['a', 'b', 'c', 'd'], rep=1)
+
+ex1 = cdb.Ex(r'(\Gamma_{\alpha})_{a}^{b} (\Gamma^{\beta})_{b}^{a}')
+susy.evaluate(ex1)
+print('\n', ex1)
+ex2 = cdb.Ex(r'(\Gamma^{\alpha})_{b a}')
+cdb.canonicalise(ex2)
+print('\n', ex2)
+ex3 = cdb.Ex(r'(A_{\gamma} B^{\gamma})_{d}^{d}')
+cdb.rename_dummies(ex3)
+print('\n', ex3)
+ex4 = cdb.Ex(r'\Gamma^{\alpha \beta \gamma \zeta \eta \theta}')
+susy.evaluate(ex4)
+print('\n', ex4)
+
+### Sec. 2.1: Code Block #7
+__cdbkernel__ = susy.susy_env()
+cdb.Ex(r'''(\Psi_{a})_{\eta}''')
+
+
+### Sec. 2.1: Code Block #8
+ex = cdb.Ex(r'(\Gamma_{a})_{\alpha \beta} (\Gamma^{b})^{\beta \gamma} C_{\gamma \eta}')
+susy.spinor_combine(ex)
+print('\n', ex)
+
+### Sec. 2.1: Code Block #9
+ex = Ex(r'(\Gamma_{a})_{\alpha \beta} (I \Gamma^{b})^{\beta \gamma} C_{\gamma \eta} (5 \delta_{b}{}^{a} \Psi_{d})_{\zeta}')
+susy.evaluate(ex)
+print('\n', ex)
+
+### Sec. 2.1: Code Block #10
+__cdbkernel__ = susy.susy_env(D = 4, lorentz_indices=['a', 'b', 'c', 'd'], spinor_indices=[r'\alpha', r'\beta', r'\gamma'])
+cdb.Depends(Ex(r'''A{#}'''), Ex(r'''D{#}, \partial{#}'''))
+cdb.Depends(Ex(r'''\lambda{#}'''), Ex(r'''D{#}, \partial{#}'''))
+cdb.Depends(Ex(r'''\indexbracket{\lambda{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
+cdb.AntiCommuting(Ex(r'''\lambda, D{#}'''))
+cdb.AntiCommuting(Ex(r'''\indexbracket{\lambda{#}}{#}, D{#}'''))
+cdb.Depends(Ex(r'''d'''), Ex(r'''D{#}, \partial{#}'''))
+
+susy_rule = r'''D_{\alpha}(A_{a}) -> u (\Gamma_{a})_{\alpha}^{\beta} (\lambda)_{\beta}, D_{\alpha}((\lambda)_{\beta}) -> v (\Gamma^{a b})_{\alpha \beta} \partial_{a}(A_{b}) + w C_{\alpha \beta} \partial^{a}(A_{a}) + x (\Gamma')_{\alpha \beta} d, D_{\alpha}(d) -> y (\Gamma' \Gamma^{a})_{\alpha}^{\beta} \partial_{a}((\lambda)_{\beta})'''
+basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
+consts = ['u', 'v', 'w', 'x', 'y']
+indices = [r'_{\alpha}', r'_{\beta}']
+
+ex = cdb.Ex(r'D_{\alpha}(D_{\beta}((\lambda)_{\gamma})) + D_{\beta}(D_{\alpha}((\lambda)_{\gamma}))')
+susy.susy_expand(ex, susy_rule)
+susy.evaluate(ex, to_perform_subs=False)
+susy.fierz_expand_2index(ex, basis, indices, to_perform_subs=False)
+print('\n', ex)
+cdb.factor_in(ex, Ex('u, v, w, x, y', False))
+print('\n', ex)
 
 # SECTION 2
 ## Section 2.2
@@ -310,4 +394,14 @@ evaluate(ex)
 print('\n', ex)
 indexbracket_hex(ex, to_decompose_product=True)
 evaluate(ex)
+print('\n', ex)
+
+### Sec. 2.12: Code Block #4
+__cdbkernel__ = susy_env(D = 4)
+Depends(Ex(r'''E{#}'''), Ex(r'''\partial{#}'''))
+AntiSymmetric(Ex(r'''B{#}'''))
+ex = Ex(r'''-  1/4 \epsilon_{a}^{b c d} A^{e} B_{b c} \partial_{e}(E_{d}) +  1/4 \epsilon_{a}^{b c d} A^{e} B_{b c} \partial_{d}(E_{e}) +  1/2 \epsilon_{a}^{b c d} A_{e} B_{b}^{e} \partial_{c}(E_{d}) +  1/4 \epsilon^{b c d e} A_{a} B_{b c} \partial_{d}(E_{e})''')
+decompose_product(ex)
+canonicalise(ex)
+collect_terms(ex)
 print('\n', ex)
