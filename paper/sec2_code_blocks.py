@@ -2,8 +2,8 @@ import sys
 sys.path.append('../')
 
 from cadabra2 import AntiCommuting, AntiSymmetric, Depends, Ex, Symmetric
-from cadabra2 import canonicalise, collect_terms, eliminate_kronecker, split_gamma
-from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, find_non_gauge_inv, fourier, inverse_fourier, make_action_susy_inv, rarita_schwinger_prop, susy_env, susy_expand, susy_solve, sym_proj_decomp, sym_prop, susy_solve_propagator
+from cadabra2 import canonicalise, collect_terms, distribute, eliminate_kronecker, split_gamma
+from susypy import evaluate, evaluate_traces, fierz_expand, fierz_expand_2index, find_non_gauge_inv, fourier, holoraumy, indexbracket_hex, inverse_fourier, make_action_susy_inv, rarita_schwinger_prop, substitute, susy_env, susy_expand, susy_solve, sym_proj_decomp, sym_prop, susy_solve_propagator
 from susypy.tools import pretty_print
 
 # SECTION 2
@@ -258,3 +258,56 @@ L = Ex(r'D_{\gamma}(l F_{a b} F^{a b} + m (\Gamma^{a})^{\alpha \beta} (\lambda)_
 susy = r'''D_{\alpha}(A_{a}) -> u (\Gamma_{a})_{\alpha}^{\beta} (\lambda)_{\beta}, D_{\alpha}((\lambda)_{\beta}) -> v (\Gamma^{a b})_{\alpha \beta} \partial_{a}(A_{b}) + w C_{\alpha \beta} \partial^{a}(A_{a}) + x (\Gamma')_{\alpha \beta} d, D_{\alpha}(d) -> y (\Gamma' \Gamma^{a})_{\alpha}^{\beta} \partial_{a}((\lambda)_{\beta}), F_{a b} -> \partial_{a}(A_{b}) - \partial_{b}(A_{a})'''
 sol = make_action_susy_inv(L, susy, ['l', 'm', 'n', 'u', 'v', 'w', 'x', 'y'], [r'\lambda'])
 print('\n', sol)
+
+## Section 2.12
+### Sec. 2.12: Code Block #1
+__cdbkernel__ = susy_env(D = 4)
+Depends(Ex(r'''A'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''B'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\Psi{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\indexbracket{\Psi{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
+
+fields = [Ex('A'), Ex('B'), Ex(r'(\Psi)_{\gamma}')]
+susy = r'''D_{\alpha}(A) -> u (\Psi)_{\alpha}, D_{\alpha}(B) -> v (\Gamma')_{\alpha}^{\beta} (\Psi)_{\beta}, D_{\alpha}((\Psi)_{\beta}) -> w (\Gamma^{a})_{\alpha \beta} \partial_{a}(A) + x (\Gamma' \Gamma^{a})_{\alpha \beta} \partial_{a}(B)'''
+basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
+subs = Ex('u -> 1, v -> I, w -> I, x -> -1', False)
+indices = [r'_{\alpha}', r'_{\beta}']
+T = holoraumy(fields, susy, basis, subs, indices)
+print('\n')
+pretty_print(T)
+
+### Sec. 2.12: Code Block #2
+__cdbkernel__ = susy_env(D = 4)
+Depends(Ex(r'''h{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\Psi{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\indexbracket{\Psi{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
+Depends(Ex(r'''\zeta{#}'''), Ex(r'''\partial{#}'''))
+Depends(Ex(r'''\indexbracket{\zeta{#}}{#}'''), Ex(r'''\partial{#}'''))
+Symmetric(Ex(r'''h{#}'''))
+
+fields = [Ex('h_{a b}'), Ex(r'(\Psi_{a})_{\gamma}')]
+susy = r'''D_{\alpha}(h_{a b}) -> u (\Gamma_{a})_{\alpha}^{\beta} (\Psi_{b})_{\beta} + u (\Gamma_{b})_{\alpha}^{\beta} (\Psi_{a})_{\beta}, D_{\alpha}((\Psi_{a})_{\beta}) -> v (\Gamma^{b c})_{\alpha \beta} \partial_{b}(h_{c a})'''
+basis = [Ex(r'C_{\alpha \beta}'), Ex(r'(\Gamma^{a})_{\alpha \beta}'), Ex(r'(\Gamma^{a b})_{\alpha \beta}'), Ex(r'''(\Gamma')_{\alpha \beta}'''), Ex(r'''(\Gamma' \Gamma^{a})_{\alpha \beta}''')]
+subs = Ex('u -> 1/2, v -> -I', False)
+indices = [r'_{\alpha}', r'_{\beta}']
+holo_data = holoraumy(fields, susy, basis, subs, indices)
+print('\n')
+pretty_print(holo_data)
+
+### Sec. 2.12: Code Block #3
+ex1 = Ex(r'D_{\alpha}(D_{\beta}((\Psi_{a})_{\gamma})) - D_{\beta}(D_{\alpha}((\Psi_{a})_{\gamma}))')
+susy_expand(ex1, susy)
+substitute(ex1, subs)
+distribute(ex1)
+evaluate(ex1, to_perform_subs=False)
+fierz_expand_2index(ex1, basis, indices)
+ex2a = Ex(r'''2 I (-(3/4) \delta_{a b} (\Gamma' \Gamma_{c})_{\alpha \beta} (\Gamma')_{\gamma}^{\eta} + (3/4) \delta_{a c} (\Gamma' \Gamma_{b})_{\alpha \beta} (\Gamma')_{\gamma}^{\eta} - (1/8) I \epsilon_{a b c d} (\Gamma' \Gamma^{d})_{\alpha \beta} C_{\gamma}^{\eta} + (1/8) (\Gamma' \Gamma_{b})_{\alpha \beta} (\Gamma' \Gamma_{c a})_{\gamma}^{\eta} - (1/8) (\Gamma' \Gamma_{c})_{\alpha \beta} (\Gamma' \Gamma_{b a})_{\gamma}^{\eta}) \partial^{b}((\Psi^{c})_{\eta})''')
+ex2b = Ex(r'''I (-C_{\alpha \beta} (\Gamma_{a})_{\gamma}^{\eta} - (\Gamma')_{\alpha \beta} (\Gamma' \Gamma_{a})_{\gamma}^{\eta} + (1/2) (\Gamma' \Gamma^{d})_{\alpha \beta} (\Gamma' \Gamma_{d} \Gamma_{a})_{\gamma}^{\eta} - (1/4) (\Gamma' \Gamma_{a})_{\alpha \beta} (\Gamma')_{\gamma}^{\eta}) (\Gamma^{e f})_{\eta}^{\rho} \partial_{e}((\Psi_{f})_{\rho}) + (1/4) (5 C_{\alpha \beta} C_{\gamma}^{\eta} + 5 (\Gamma')_{\alpha \beta} (\Gamma')_{\gamma}^{\eta} - 2 (\Gamma' \Gamma^{d})_{\alpha \beta} (\Gamma' \Gamma_{d})_{\gamma}^{\eta}) \epsilon_{a}^{e f g} (\Gamma' \Gamma_{e})_{\eta}^{\rho} \partial_{f}((\Psi_{g})_{\rho})''')
+ex2c = Ex(r'''(3/4) I (C_{\alpha \beta} (\Gamma^{b})_{\gamma}^{\eta} + (\Gamma')_{\alpha \beta} (\Gamma' \Gamma^{b})_{\gamma}^{\eta} + (\Gamma' \Gamma^{b})_{\alpha \beta} (\Gamma')_{\gamma}^{\eta} - (1/3) (\Gamma' \Gamma_{c})_{\alpha \beta} (\Gamma' \Gamma^{c b})_{\gamma}^{\eta}) \partial_{a}((\Psi_{b})_{\eta})''')
+ex = ex1 + ex2a + ex2b + ex2c
+evaluate(ex)
+evaluate(ex)
+print('\n', ex)
+indexbracket_hex(ex, to_decompose_product=True)
+evaluate(ex)
+print('\n', ex)

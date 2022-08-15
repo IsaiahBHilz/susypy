@@ -1163,17 +1163,21 @@ def sunder_gamma(ex: Ex, desired_indices: List[str]) -> Tuple[Ex, Ex]:
 	desired_indices.sort()
 	lorentz_indices = get_indices(ex, rel=True, lorentz=True)
 	desired_indices_pr = [('^' if next(ex[i]).parent_rel == super else '_') + f'{{{i}}}' for i in desired_indices]
-	new_lorentz_indices = sorted(list(set(lorentz_indices) - set(desired_indices_pr))) + desired_indices_pr
+	#new_lorentz_indices = sorted(list(set(lorentz_indices) - set(desired_indices_pr))) + desired_indices_pr
+	new_lorentz_indices = sorted(list(set(lorentz_indices) - set(desired_indices_pr)), key=lambda x: x[2:-1]) + desired_indices_pr
 
 	if set(lorentz_indices) == set(desired_indices_pr):
 		return ex, Ex('0')
 
 	sgn = parity(lorentz_indices, new_lorentz_indices)
-	ex = Ex(str(sgn))*swap(ex, lorentz_indices, new_lorentz_indices)
+	#ex = Ex(str(sgn))*swap(ex, lorentz_indices, new_lorentz_indices)
+	ex = swap(ex, lorentz_indices, new_lorentz_indices)
 
 	for i in range(len(desired_indices)):
 		split_gamma(ex, on_back=True)
 		distribute(ex)
+
+	ex *= Ex(str(sgn))
 
 	sundered_term = next(ex.top().terms()).ex()
 	ex -= sundered_term
