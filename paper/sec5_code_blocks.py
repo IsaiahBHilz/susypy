@@ -19,7 +19,7 @@ ex = ex1 + ex2
 print('\n', ex)
 
 ### Sec. 5.1: Code Block #3
-sub = cdb.Ex(r'A_{a} -> G_{a}{}^{d} H_{d}, \Theta_{e}{}^{f} -> \Psi_{e}{}^{f}', False)
+sub = cdb.Ex(r'A_{a} -> G_{a}^{d} H_{d}, \Theta_{e}^{f} -> \Psi_{e}^{f}', False)
 cdb.substitute(ex, sub)
 print('\n', ex)
 
@@ -40,6 +40,7 @@ print('\n', ex3)
 ### Sec. 5.1: Code Block #6
 __cdbkernel__ = susy.susy_env(D = 11, lorentz_indices=[r'\alpha', r'\beta', r'\gamma', r'\zeta', r'\eta', r'\theta', r'\iota', r'\kappa', r'\lambda', r'\mu', r'\nu'], spinor_indices=['a', 'b', 'c', 'd'], rep=1)
 
+### Sec. 5.1: Code Block #7
 ex1 = cdb.Ex(r'(\Gamma_{\alpha})_{a}^{b} (\Gamma^{\beta})_{b}^{a}')
 susy.evaluate(ex1)
 print('\n', ex1)
@@ -49,26 +50,26 @@ print('\n', ex2)
 ex3 = cdb.Ex(r'(A_{\gamma} B^{\gamma})_{d}^{d}')
 cdb.rename_dummies(ex3)
 print('\n', ex3)
-ex4 = cdb.Ex(r'\Gamma^{\alpha \beta \gamma \zeta \eta \theta}')
+ex4 = cdb.Ex(r'\Gamma^{\alpha \beta \eta \gamma \theta \zeta}')
 susy.evaluate(ex4)
 print('\n', ex4)
 
-### Sec. 5.1: Code Block #7
+### Sec. 5.1: Code Block #8
 __cdbkernel__ = susy.susy_env()
 cdb.Ex(r'''(\Psi_{a})_{\eta}''')
 
 
-### Sec. 5.1: Code Block #8
+### Sec. 5.1: Code Block #9
 ex = cdb.Ex(r'(\Gamma_{a})_{\alpha \beta} (\Gamma^{b})^{\beta \gamma} C_{\gamma \eta}')
 susy.spinor_combine(ex)
 print('\n', ex)
 
-### Sec. 5.1: Code Block #9
+### Sec. 5.1: Code Block #10
 ex = Ex(r'(\Gamma_{a})_{\alpha \beta} (I \Gamma^{b})^{\beta \gamma} C_{\gamma \eta} (5 \delta_{b}{}^{a} \Psi_{d})_{\zeta}')
 susy.evaluate(ex)
 print('\n', ex)
 
-### Sec. 5.1: Code Block #10
+### Sec. 5.1: Code Block #11
 __cdbkernel__ = susy.susy_env(D = 4, lorentz_indices=['a', 'b', 'c', 'd'], spinor_indices=[r'\alpha', r'\beta', r'\gamma'])
 cdb.Depends(Ex(r'''A{#}'''), Ex(r'''D{#}, \partial{#}'''))
 cdb.Depends(Ex(r'''\lambda{#}'''), Ex(r'''D{#}, \partial{#}'''))
@@ -350,6 +351,8 @@ Depends(Ex(r'''A'''), Ex(r'''D{#}, \partial{#}'''))
 Depends(Ex(r'''B'''), Ex(r'''D{#}, \partial{#}'''))
 Depends(Ex(r'''\Psi{#}'''), Ex(r'''D{#}, \partial{#}'''))
 Depends(Ex(r'''\indexbracket{\Psi{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
+AntiCommuting(Ex(r'''\Psi, D{#}'''))
+AntiCommuting(Ex(r'''\indexbracket{\Psi{#}}{#}, D{#}'''))
 
 fields = [Ex('A'), Ex('B'), Ex(r'(\Psi)_{\gamma}')]
 susy = r'''D_{\alpha}(A) -> u (\Psi)_{\alpha}, D_{\alpha}(B) -> v (\Gamma')_{\alpha}^{\beta} (\Psi)_{\beta}, D_{\alpha}((\Psi)_{\beta}) -> w (\Gamma^{a})_{\alpha \beta} \partial_{a}(A) + x (\Gamma' \Gamma^{a})_{\alpha \beta} \partial_{a}(B)'''
@@ -368,6 +371,8 @@ Depends(Ex(r'''\indexbracket{\Psi{#}}{#}'''), Ex(r'''D{#}, \partial{#}'''))
 Depends(Ex(r'''\zeta{#}'''), Ex(r'''\partial{#}'''))
 Depends(Ex(r'''\indexbracket{\zeta{#}}{#}'''), Ex(r'''\partial{#}'''))
 Symmetric(Ex(r'''h{#}'''))
+AntiCommuting(Ex(r'''\Psi, D{#}'''))
+AntiCommuting(Ex(r'''\indexbracket{\Psi{#}}{#}, D{#}'''))
 
 fields = [Ex('h_{a b}'), Ex(r'(\Psi_{a})_{\gamma}')]
 susy = r'''D_{\alpha}(h_{a b}) -> u (\Gamma_{a})_{\alpha}^{\beta} (\Psi_{b})_{\beta} + u (\Gamma_{b})_{\alpha}^{\beta} (\Psi_{a})_{\beta}, D_{\alpha}((\Psi_{a})_{\beta}) -> v (\Gamma^{b c})_{\alpha \beta} \partial_{b}(h_{c a})'''

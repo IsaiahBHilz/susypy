@@ -23,7 +23,7 @@ susy = r'D_{\alpha}(h_{a b}) -> u ((\Gamma_{a})_{\alpha \beta} (\Psi_{b})^{\beta
 # SECTION 3
 ## Section 3.1
 ### Sec. 3.1: Code Block #1
-L = Ex(r'D_{\gamma}(l (-1/4 c^{a b c} c_{a b c} + 1/2 c^{a b c} c_{c a b} + c^{a}_{b}^{b} c_{a c}^{c}) + m (1/12) (\Psi_{a})^{\alpha} (\Gamma^{a b c})_{\alpha \beta} \partial_{b}((\Psi_c)^{\beta}) + n (1/48) (\partial_{a}(A_{b c d})-\partial_{a}(A_{b d c})-\partial_{a}(A_{c b d}) + \partial_{a}(A_{c d b}) + \partial_{a}(A_{d b c})-\partial_{a}(A_{d c b})-\partial_{b}(A_{a c d}) + \partial_{b}(A_{a d c}) + \partial_{b}(A_{c a d})-\partial_{b}(A_{c d a})-\partial_{b}(A_{d a c}) + \partial_{b}(A_{d c a}) + \partial_{c}(A_{a b d})-\partial_{c}(A_{a d b})-\partial_{c}(A_{b a d}) + \partial_{c}(A_{b d a}) + \partial_{c}(A_{d a b})-\partial_{c}(A_{d b a})-\partial_{d}(A_{a b c}) + \partial_{d}(A_{a c b}) + \partial_{d}(A_{b a c})-\partial_{d}(A_{b c a})-\partial_{d}(A_{c a b}) + \partial_{d}(A_{c b a})) (\partial^{a}(A^{b c d})-\partial^{a}(A^{b d c})-\partial^{a}(A^{c b d}) + \partial^{a}(A^{c d b}) + \partial^{a}(A^{d b c})-\partial^{a}(A^{d c b})-\partial^{b}(A^{a c d}) + \partial^{b}(A^{a d c}) + \partial^{b}(A^{c a d})-\partial^{b}(A^{c d a})-\partial^{b}(A^{d a c}) + \partial^{b}(A^{d c a}) + \partial^{c}(A^{a b d})-\partial^{c}(A^{a d b})-\partial^{c}(A^{b a d}) + \partial^{c}(A^{b d a}) + \partial^{c}(A^{d a b})-\partial^{c}(A^{d b a})-\partial^{d}(A^{a b c}) + \partial^{d}(A^{a c b}) + \partial^{d}(A^{b a c})-\partial^{d}(A^{b c a})-\partial^{d}(A^{c a b}) + \partial^{d}(A^{c b a})))')
+L = Ex(r'D_{\gamma}(l (-1/4 c^{a b c} c_{a b c} + 1/2 c^{a b c} c_{c a b} + c^{a}_{b}^{b} c_{a c}^{c}) + m (1/12) (\Psi_{a})^{\alpha} (\Gamma^{a b c})_{\alpha \beta} \partial_{b}((\Psi_c)^{\beta}) + n (3/4) (\partial_{a}(A_{b c d}) - \partial_{b}(A_{a c d}) + \partial_{c}(A_{a b d}) - \partial_{d}(A_{a b c})) (\partial^{a}(A^{b c d}) - \partial^{b}(A^{a c d}) + \partial^{c}(A^{a b d}) - \partial^{d}(A^{a b c})))')
 
 ### Sec. 3.1: Code Block #2
 sol = make_action_susy_inv(L, susy, ['u', 'v', 'x', 'y', 'z', 'l', 'm', 'n'], [r'\Psi'])
@@ -33,5 +33,5 @@ print('\n', sol)
 ### Sec. 3.2: Code Block #1
 susy_expand(L, susy)
 evaluate(L)
-factor_in(L, Ex('u, v, x, y, z', False))
+factor_in(L, Ex('u, v, x, y, z, l, m, n', False))
 print('\n', L)

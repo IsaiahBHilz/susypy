@@ -1,0 +1,1 @@
+Finished 'susy_solve' in 5673.0937 secs
