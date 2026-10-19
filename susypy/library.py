@@ -374,7 +374,7 @@ def susy_env(
 	all_spinor_indices = index_list_to_str(spinor_indices)
 
 	Indices(Ex(all_lorentz_indices), Ex(r'vector, position=free'))
-	Integer(Ex(all_lorentz_indices), Ex(fr'0..{D}-1'))
+	Integer(Ex(all_lorentz_indices), Ex(fr'0..{D-1}'))
 	Indices(Ex(all_spinor_indices), Ex(r'''spinor, position=independent'''))
 
 	ImaginaryI(Ex(r'''I'''))
@@ -1307,10 +1307,13 @@ def filter_terms(ex: Ex, field: Ex, indices: List[str], identify_lorentz_proper:
 					gamma 			 = next(inner_obj[r'\Gamma'])
 					remainder[gamma] = remainder_terms
 
-			evaluate(remainder, to_perform_subs=False)
-
 			lorentz_proper_terms.append(term)
-			terms += [t.ex() for t in remainder.top().terms()]
+
+			# Newer Cadabra2 versions do not collapse a product containing a zero
+			# factor, so skip the remainder when sunder_gamma left nothing over.
+			if remainder_terms is not None and str(remainder_terms).strip() != '0':
+				evaluate(remainder, to_perform_subs=False)
+				terms += [t.ex() for t in remainder.top().terms()]
 
 		elif identify_lorentz_proper and gamma_ey and set(field2['lorentz'] + [partial['index']]) & set(gamma_ey['lorentz']):
 			index_intersect = set(field2['lorentz'] + [partial['index']]) & set(gamma_ey['lorentz'])
@@ -1332,10 +1335,13 @@ def filter_terms(ex: Ex, field: Ex, indices: List[str], identify_lorentz_proper:
 					gamma 			 = next(inner_obj[r'\Gamma'])
 					remainder[gamma] = remainder_terms
 
-			evaluate(remainder, to_perform_subs=False)
-
 			lorentz_proper_terms.append(term)
-			terms += [t.ex() for t in remainder.top().terms()]
+
+			# Newer Cadabra2 versions do not collapse a product containing a zero
+			# factor, so skip the remainder when sunder_gamma left nothing over.
+			if remainder_terms is not None and str(remainder_terms).strip() != '0':
+				evaluate(remainder, to_perform_subs=False)
+				terms += [t.ex() for t in remainder.top().terms()]
 
 		elif partial['index'] in term_free_indices:
 			gauge_terms.append(term)
