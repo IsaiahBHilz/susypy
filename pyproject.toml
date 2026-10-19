@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "susypy"
+version = "1.1.0"
+description = "A symbolic algebra system for supersymmetry calculations, built on Cadabra2."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "GPL-3.0-only"
+license-files = ["COPYING.txt"]
+authors = [
+    { name = "Saul Hilsenrath" },
+    { name = "Isaiah B. Hilsenrath", email = "ihilsenr@umd.edu" },
+]
+keywords = ["supersymmetry", "supergravity", "cadabra", "tensor algebra", "symbolic computation", "fierz", "holoraumy"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "sympy",
+    # Cadabra2 only publishes wheels on PyPI for Linux. On macOS and Windows,
+    # install Cadabra2 >= 2.6 separately (see the README) before using SusyPy.
+    "cadabra2>=2.6; sys_platform == 'linux'",
+]
+
+[project.optional-dependencies]
+# Needed only for susypy.tools.send_msg (text-message notifications).
+notify = ["twilio"]
+
+[project.urls]
+Homepage = "https://github.com/IsaiahBHilz/susypy"
+Source = "https://github.com/IsaiahBHilz/susypy"
+Issues = "https://github.com/IsaiahBHilz/susypy/issues"
+Paper = "https://arxiv.org/abs/2212.00614"
+
+[tool.setuptools]
+packages = ["susypy"]
