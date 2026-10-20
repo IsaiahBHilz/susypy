@@ -267,4 +267,4 @@ The [`paper/`](https://github.com/IsaiahBHilz/susypy/tree/main/paper) folder has
 
 # License:
 
-SusyPy is released under the GNU General Public License v3.0; see [`COPYING.txt`](https://github.com/IsaiahBHilz/susypy/blob/main/COPYING.txt).
+SusyPy is released under the GNU General Public License, version 3 or (at your option) any later version; see [`COPYING.txt`](https://github.com/IsaiahBHilz/susypy/blob/main/COPYING.txt).
