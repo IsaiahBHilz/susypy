@@ -1,6 +1,6 @@
 """
 SusyPy: a symbolic algebra system for supersymmetry calculations.
-Copyright (C) 2022  Saul & Isaiah B. Hilsenrath <ihilsenr@umd.edu>
+Copyright (C) 2022  Saul Hilsenrath <saulhils@sas.upenn.edu> & Isaiah B. Hilsenrath <ibh@sas.upenn.edu>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -370,11 +370,18 @@ def susy_env(
 	elif len(spinor_indices) < 2:
 		raise ValueError(f'You need at least 2 Spinor indices, but you have only {len(spinor_indices)}.')
 
+	# Start from a fresh kernel so that properties declared by a previous call
+	# (e.g. for a different dimension or index set) do not persist. Cadabra2
+	# looks up __cdbkernel__ in the calling frame's globals, so installing it
+	# here makes it the kernel for every function in this module.
+	kernel = Kernel(True)
+	globals()['__cdbkernel__'] = kernel
+
 	all_lorentz_indices = index_list_to_str(lorentz_indices)
 	all_spinor_indices = index_list_to_str(spinor_indices)
 
 	Indices(Ex(all_lorentz_indices), Ex(r'vector, position=free'))
-	Integer(Ex(all_lorentz_indices), Ex(fr'0..{D}-1'))
+	Integer(Ex(all_lorentz_indices), Ex(fr'0..{D-1}'))
 	Indices(Ex(all_spinor_indices), Ex(r'''spinor, position=independent'''))
 
 	ImaginaryI(Ex(r'''I'''))
@@ -416,7 +423,7 @@ def susy_env(
 	globals()['lorentz_indices'] = lorentz_indices
 	globals()['spinor_indices'] = spinor_indices
 
-	return __cdbkernel__
+	return kernel
 
 def is_delta_prod(ex: Ex) -> bool:
 	return False not in [x.name == r'\delta' for x in ex.top().factors()]
@@ -1307,10 +1314,13 @@ def filter_terms(ex: Ex, field: Ex, indices: List[str], identify_lorentz_proper:
 					gamma 			 = next(inner_obj[r'\Gamma'])
 					remainder[gamma] = remainder_terms
 
-			evaluate(remainder, to_perform_subs=False)
-
 			lorentz_proper_terms.append(term)
-			terms += [t.ex() for t in remainder.top().terms()]
+
+			# Newer Cadabra2 versions do not collapse a product containing a zero
+			# factor, so skip the remainder when sunder_gamma left nothing over.
+			if remainder_terms is not None and str(remainder_terms).strip() != '0':
+				evaluate(remainder, to_perform_subs=False)
+				terms += [t.ex() for t in remainder.top().terms()]
 
 		elif identify_lorentz_proper and gamma_ey and set(field2['lorentz'] + [partial['index']]) & set(gamma_ey['lorentz']):
 			index_intersect = set(field2['lorentz'] + [partial['index']]) & set(gamma_ey['lorentz'])
@@ -1332,10 +1342,13 @@ def filter_terms(ex: Ex, field: Ex, indices: List[str], identify_lorentz_proper:
 					gamma 			 = next(inner_obj[r'\Gamma'])
 					remainder[gamma] = remainder_terms
 
-			evaluate(remainder, to_perform_subs=False)
-
 			lorentz_proper_terms.append(term)
-			terms += [t.ex() for t in remainder.top().terms()]
+
+			# Newer Cadabra2 versions do not collapse a product containing a zero
+			# factor, so skip the remainder when sunder_gamma left nothing over.
+			if remainder_terms is not None and str(remainder_terms).strip() != '0':
+				evaluate(remainder, to_perform_subs=False)
+				terms += [t.ex() for t in remainder.top().terms()]
 
 		elif partial['index'] in term_free_indices:
 			gauge_terms.append(term)
