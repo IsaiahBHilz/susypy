@@ -370,6 +370,13 @@ def susy_env(
 	elif len(spinor_indices) < 2:
 		raise ValueError(f'You need at least 2 Spinor indices, but you have only {len(spinor_indices)}.')
 
+	# Start from a fresh kernel so that properties declared by a previous call
+	# (e.g. for a different dimension or index set) do not persist. Cadabra2
+	# looks up __cdbkernel__ in the calling frame's globals, so installing it
+	# here makes it the kernel for every function in this module.
+	kernel = Kernel(True)
+	globals()['__cdbkernel__'] = kernel
+
 	all_lorentz_indices = index_list_to_str(lorentz_indices)
 	all_spinor_indices = index_list_to_str(spinor_indices)
 
@@ -416,7 +423,7 @@ def susy_env(
 	globals()['lorentz_indices'] = lorentz_indices
 	globals()['spinor_indices'] = spinor_indices
 
-	return __cdbkernel__
+	return kernel
 
 def is_delta_prod(ex: Ex) -> bool:
 	return False not in [x.name == r'\delta' for x in ex.top().factors()]

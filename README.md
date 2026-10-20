@@ -141,9 +141,7 @@ To check that the environment has the properties we asked for, we use SusyPy's s
 (A_{a} B^{a})_{α}^{α}
 ```
 
-To change the environment, call `susy_env()` again with new parameters. Below we switch to D = 11 with Greek Lorentz indices, Latin spinor indices, and the "positive" representation of the 11D Clifford algebra. `desired_syms` is not needed in odd dimensions; here it is (1, −1), so the spinor metric is antisymmetric and the 1-index gamma matrix is symmetric.
-
-> :warning: Currently, calling `susy_env()` again in the same Python session does not fully reset the previous environment (some properties from the old one remain on the Cadabra2 kernel), which can stop dimension-specific substitutions like the six-index gamma-matrix reduction below from being applied. Until this is fixed, start a new Python session when you change the dimension or the index lists.
+To change the environment, call `susy_env()` again with new parameters. Each call starts from a fresh Cadabra2 kernel, so properties from the previous environment (including any you declared yourself) are discarded; assign the result to `__cdbkernel__` again. Below we switch to D = 11 with Greek Lorentz indices, Latin spinor indices, and the "positive" representation of the 11D Clifford algebra. `desired_syms` is not needed in odd dimensions; here it is (1, −1), so the spinor metric is antisymmetric and the 1-index gamma matrix is symmetric.
 
 ```python
 >>> __cdbkernel__ = susy.susy_env(D = 11, lorentz_indices=[r'\alpha', r'\beta', r'\gamma', r'\zeta', r'\eta', r'\theta', r'\iota', r'\kappa', r'\lambda', r'\mu', r'\nu'], spinor_indices=['a', 'b', 'c', 'd'], rep=1)
@@ -165,7 +163,7 @@ Now the trace should be 32δ<sub>α</sub><sup>β</sup>, the 1-index gamma matrix
 (A_{α} B^{α})_{a}^{a}
 >>> ex4 = cdb.Ex(r'\Gamma^{\alpha \beta \eta \gamma \theta \zeta}')
 >>> susy.evaluate(ex4)
--1/120 ε^{α β η γ θ ζ ι κ λ μ ν} Γ_{ι κ λ μ ν}
+ -  1/120 ε^{α β η γ θ ζ ι κ λ μ ν} Γ_{ι κ λ μ ν}
 ```
 
 ## **Simplifying Tensor Expressions:**
